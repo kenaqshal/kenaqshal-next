@@ -10,7 +10,7 @@ export default function Snippets({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container
-      title="Code Snippets – Lee Robinson"
+      title="Code Snippets – Ken Aqshal Bramasta"
       description="A collection of code snippets – including serverless functions, Node.js scripts, and CSS tricks."
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">

@@ -4,7 +4,7 @@ import { indexQuery } from 'lib/queries';
 
 export async function getServerSideProps({ res }) {
   const feed = new RSS({
-    title: 'Lee Robinson',
+    title: 'Ken Aqshal Bramasta',
     site_url: 'https://leerob.io',
     feed_url: 'https://leerob.io/feed.xml'
   });

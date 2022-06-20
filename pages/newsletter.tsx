@@ -4,7 +4,7 @@ import Subscribe from 'components/Subscribe';
 export default function Newsletter() {
   return (
     <Container
-      title="Newsletter – Lee Robinson"
+      title="Newsletter – Ken Aqshal Bramasta"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">

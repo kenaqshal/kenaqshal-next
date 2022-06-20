@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Uses() {
   return (
     <Container
-      title="Uses – Lee Robinson"
+      title="Uses – Ken Aqshal Bramasta"
       description="Here's what tech I'm currently using for coding, videos, and music."
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
