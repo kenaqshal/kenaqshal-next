@@ -16,12 +16,12 @@ export default function Home({ videos }) {
               Ken Aqshal Bramasta
             </h1>
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-              Director of Developer Relations at{' '}
-              <span className="font-semibold">Vercel</span>
+              Software Engineer at{' '}
+              <span className="font-semibold">Mbiz.co.id</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-16">
-              Helping developers build a faster web. Teaching about web
-              development, serverless, and React / Next.js.
+              Friendly software engineer who love to learn new things and 
+              always looking for new ways to improve his skills 
             </p>
           </div>
           <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">

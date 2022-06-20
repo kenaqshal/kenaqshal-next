@@ -13,66 +13,28 @@ export default function About() {
           About Me
         </h1>
         <div className="mb-8 prose dark:prose-dark leading-6">
-          <h2>Links</h2>
-          <ul>
-            <li>
-              Twitter: <a href="https://twitter.com/leeerob">@leeerob</a>
-            </li>
-            <li>
-              GitHub: <a href="https://github.com/leerob">@leerob</a>
-            </li>
-            <li>
-              Website:{' '}
-              <Link href="https://leerob.io">
-                <a>https://leerob.io</a>
-              </Link>
-            </li>
-            <li>
-              LinkedIn:{' '}
-              <a href="https://www.linkedin.com/in/leeerob/">
-                https://www.linkedin.com/in/leeerob
-              </a>
-            </li>
-          </ul>
-          <h2>Bio</h2>
-          <h3>Job Title</h3>
-          <p>Ken Aqshal Bramasta, Director of Developer Relations at Vercel</p>
-          <h3>Long, 3rd Person</h3>
+          <h6>
+            Hey I’m Bramasta, a software engineer who currently living in
+            Jakarta, Indonesia 🇮🇩
+          </h6>
           <p>
-            Ken Aqshal Bramasta is the Director of Developer Relations at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web and leads the Next.js community. Prior to that,
-            Lee was a Senior Software Engineer focused on the frontend. An
-            educator, writer, and speaker, Lee has also created extensive
-            courses on React and Next.js.
+            I'm currently working at <a href="https://www.mbiz.co.id/">Mbiz</a>,
+            maintaining and developing the future of procurement stuff. Before
+            that, I worked at Bangun Kreatif Abadi, as a technical consultant.
           </p>
-          <h3>Long, 1st Person</h3>
           <p>
-            Hey, I'm Lee. I lead Developer Relations at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web. I'm a Next.js contributor and help
-            lead our open-source communities. I've passionate about frontend
-            development and have created courses on React, Next.js, and web
-            development. I'm an advisor and investor in early stage startups.
+            I grew up in Bekasi, West Java. Just side of Jakarta(the most
+            crowded city in indonesia🚗), and I come from a software engineering
+            background in Vocational high school. I love working in the backend
+            because I don't have an interest in design and am more comfortable
+            creating a high-speed and reliable service rather than responsive
+            design. And I spent almost 90% of my career as a backend engineer✨.
           </p>
-          <h3>Short, 3rd Person</h3>
+
           <p>
-            Ken Aqshal Bramasta is the Director of Developer Relations at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web.
+            In my spare time🆓, I love being outdoors, reading a comic or book,
+            and watching the movie
           </p>
-          <h3>Short, 1st Person</h3>
-          <p>
-            Hey, I'm Lee. I lead Developer Relations at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web.
-          </p>
-          <h3>Education</h3>
-          <p>
-            Ken Aqshal Bramasta graduated from Iowa State University with a BS in
-            Computer Engineering.
-          </p>
-          <h2>Headshots</h2>
           <div className="flex space-x-8">
             <a href="/avatar.jpg">
               <Image
