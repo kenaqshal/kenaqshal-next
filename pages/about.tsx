@@ -2,9 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import Container from 'components/Container';
-import avatar from 'public/avatar.jpg';
-import avatarBW from 'public/avatar-bw.jpg';
-
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  Twitter
+} from '@styled-icons/simple-icons';
 export default function About() {
   return (
     <Container title="About – Ken Aqshal Bramasta">
@@ -12,15 +16,16 @@ export default function About() {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me
         </h1>
-        <div className="mb-8 prose dark:prose-dark leading-6">
+        <div className="mb-8 prose dark:prose-dark leading-6 max-w-2xl">
           <h6>
             Hey I’m Bramasta, a software engineer who currently living in
             Jakarta, Indonesia 🇮🇩
           </h6>
           <p>
-            I'm currently working at <a href="https://www.mbiz.co.id/">Mbiz</a>,
-            maintaining and developing the future of procurement stuff. Before
-            that, I worked at Bangun Kreatif Abadi, as a technical consultant.
+            I'm currently working at{' '}
+            <Link href="https://www.mbiz.co.id/">Mbiz</Link>, maintaining and
+            developing the future of procurement stuff. Before that, I worked at
+            Bangun Kreatif Abadi, as a technical consultant.
           </p>
           <p>
             I grew up in Bekasi, West Java. Just side of Jakarta(the most
@@ -35,26 +40,27 @@ export default function About() {
             In my spare time🆓, I love being outdoors, reading a comic or book,
             and watching the movie
           </p>
-          <div className="flex space-x-8">
-            <a href="/avatar.jpg">
-              <Image
-                alt="Ken Aqshal Bramasta headshot"
-                width={400}
-                quality={100}
-                src={avatar}
-                className="rounded-md"
-              />
-            </a>
-            <a href="/avatar-bw.jpg">
-              <Image
-                alt="Ken Aqshal Bramasta headshot"
-                width={400}
-                quality={100}
-                src={avatarBW}
-                className="rounded-md"
-              />
-            </a>
-          </div>
+          <p className="mb-2">
+            You can also follow my work, projects and occassional insights into
+            my life on my social networks:
+          </p>
+          <span>
+            <Link href={'https://github.com/kenaqshal'} target='_blank'>
+              <Github className="w-6 h-auto text-gray-800 dark:text-gray-200" />
+            </Link>
+            <Link href={'https://www.instagram.com/kenaqshal'} target='_blank'>
+              <Instagram className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
+            </Link>
+            <Link href={'https://www.linkedin.com/in/kenaqshal'} target='_blank'>
+              <Linkedin className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
+            </Link>
+            <Link href={'https://www.facebook.com/kenaqshal.bramasta'} target='_blank'>
+              <Facebook className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
+            </Link>
+            <Link href={'https://twitter.com/kenaqshal'} target='_blank'>
+              <Twitter className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
+            </Link>
+          </span>
         </div>
       </div>
     </Container>
