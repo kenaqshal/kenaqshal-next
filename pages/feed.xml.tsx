@@ -5,15 +5,15 @@ import { indexQuery } from 'lib/queries';
 export async function getServerSideProps({ res }) {
   const feed = new RSS({
     title: 'Ken Aqshal Bramasta',
-    site_url: 'https://leerob.io',
-    feed_url: 'https://leerob.io/feed.xml'
+    site_url: 'https://kenaqshal.com',
+    feed_url: 'https://kenaqshal.com/feed.xml'
   });
 
   const allPosts = await sanityClient.fetch(indexQuery);
   allPosts.map((post) => {
     feed.item({
       title: post.title,
-      url: `https://leerob.io/blog/${post.slug}`,
+      url: `https://kenaqshal.com/blog/${post.slug}`,
       date: post.date,
       description: post.excerpt
     });

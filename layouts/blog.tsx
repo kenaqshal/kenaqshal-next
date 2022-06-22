@@ -53,7 +53,7 @@ export default function BlogLayout({
         <div className="text-sm text-gray-700 dark:text-gray-300">
           <a
             href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-              `https://leerob.io/blog/${post.slug}`
+              `https://kenaqshal.com/blog/${post.slug}`
             )}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default function BlogLayout({
           </a>
           {` • `}
           <a
-            href="https://github.com/leerob/leerob.io/issues"
+            href="https://github.com/leerob/kenaqshal.com/issues"
             target="_blank"
             rel="noopener noreferrer"
           >
