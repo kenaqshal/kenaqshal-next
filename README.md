@@ -1,4 +1,4 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fkenaqshal.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fkenaqshal%2Fkenaqshal.com)
 
 # kenaqshal.com
 
@@ -15,9 +15,9 @@
 I've recorded two live streams walking through this repository and answering questions.
 
 - [Stream #2 – Nov 10, 2021 (1h 4min)](https://www.youtube.com/watch?v=WZZFW5xDjJ4)
-  - [Browse repository](https://github.com/leerob/kenaqshal.com/tree/747479118497d31433cb78ced5c1628ed5d1583b) at this point in time.
+  - [Browse repository](https://github.com/kenaqshal/kenaqshal.com/tree/747479118497d31433cb78ced5c1628ed5d1583b) at this point in time.
 - [Stream #1 – Jan 27, 2021 (1h 11min)](https://www.youtube.com/watch?v=xXQsF0q8KUg)
-  - [Browse repository](https://github.com/leerob/kenaqshal.com/tree/568df6d056a4f7ea6f10fab07786c8ec6cbbddde) at this point in time.
+  - [Browse repository](https://github.com/kenaqshal/kenaqshal.com/tree/568df6d056a4f7ea6f10fab07786c8ec6cbbddde) at this point in time.
 
 ## Overview
 
@@ -38,14 +38,14 @@ I've recorded two live streams walking through this repository and answering que
 This application requires Node.js v16.13+.
 
 ```bash
-$ git clone https://github.com/leerob/kenaqshal.com.git
+$ git clone https://github.com/kenaqshal/kenaqshal.com.git
 $ cd kenaqshal.com
 $ yarn
 $ yarn dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/leerob/kenaqshal.com/blob/main/.env.example).
+Create a `.env` file similar to [`.env.example`](https://github.com/kenaqshal/kenaqshal.com/blob/main/.env.example).
 
 ## Cloning / Forking
 
-Please review the [license](https://github.com/leerob/kenaqshal.com/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).
+Please review the [license](https://github.com/kenaqshal/kenaqshal.com/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).

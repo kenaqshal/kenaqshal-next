@@ -39,7 +39,7 @@ export default function Uses() {
           <ul>
             <li>
               Editor: VSCode (
-              <a href="https://github.com/leerob/fastfeedback/blob/master/.vscode/extensions.json">
+              <a href="https://github.com/kenaqshal/fastfeedback/blob/master/.vscode/extensions.json">
                 Extensions
               </a>
               )

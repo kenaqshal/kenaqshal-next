@@ -23,16 +23,16 @@
   ],
   "redirects": [
     {
-      "source": "/LeeRobinson.pdf",
+      "source": "/kenaqshalinson.pdf",
       "destination": "/robinson-resume-2019.pdf"
     },
     {
       "source": "/robinson-resume-2019.pdf",
-      "destination": "https://read.cv/leerob"
+      "destination": "https://read.cv/kenaqshal"
     },
     {
       "source": "/resume",
-      "destination": "https://read.cv/leerob"
+      "destination": "https://read.cv/kenaqshal"
     },
     {
       "source": "/projects",

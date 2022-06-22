@@ -80,7 +80,7 @@ export default function Subscribe() {
             subscriberCount > 0 ? subscriberCount.toLocaleString() : '-'
           } subscribers – `}
           <a
-            href="https://www.getrevue.co/profile/leerob"
+            href="https://www.getrevue.co/profile/kenaqshal"
             target="_blank"
             rel="noopener noreferrer"
           >

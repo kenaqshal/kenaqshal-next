@@ -62,7 +62,7 @@ export default function BlogLayout({
           </a>
           {` • `}
           <a
-            href="https://github.com/leerob/kenaqshal.com/issues"
+            href="https://github.com/kenaqshal/kenaqshal.com/issues"
             target="_blank"
             rel="noopener noreferrer"
           >
