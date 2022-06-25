@@ -37,10 +37,15 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const { post } = await getClient(preview).fetch(postQuery, {
+export async function getStaticProps({ params}) {
+  const { post } = await getClient().fetch(postQuery, {
     slug: params.slug
   });
+
+  if (!post) {
+    return { notFound: true };
+  }
+
   const { html, tweetIDs, readingTime } = await mdxToHtml(post.content);
   const tweets = await getTweets(tweetIDs);
 
