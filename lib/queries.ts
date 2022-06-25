@@ -1,9 +1,9 @@
 const postFields = `
   _id,
   title,
-  date,
+  publishedAt,
   excerpt,
-  coverImage,
+  mainImage,
   "slug": slug.current,
 `;
 

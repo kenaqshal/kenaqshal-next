@@ -16,8 +16,8 @@ export default function BlogLayout({
     <Container
       title={`${post.title} – Ken Aqshal Bramasta`}
       description={post.excerpt}
-      image={urlForImage(post.coverImage).url()}
-      date={new Date(post.date).toISOString()}
+      image={urlForImage(post.mainImage).url()}
+      date={new Date(post.publishedAt).toISOString()}
       type="article"
     >
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
@@ -35,7 +35,7 @@ export default function BlogLayout({
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
               {'Ken Aqshal Bramasta / '}
-              {format(parseISO(post.date), 'MMMM dd, yyyy')}
+              {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
