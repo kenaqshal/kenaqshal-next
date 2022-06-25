@@ -5,9 +5,9 @@ export type Post = {
   slug: string;
   content: MDXRemoteSerializeResult;
   title: string;
-  date: string;
+  publishedAt: string;
   excerpt: string;
-  coverImage: string;
+  mainImage: string;
   readingTime: string;
   tweets: any[];
 };

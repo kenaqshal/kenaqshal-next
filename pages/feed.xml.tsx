@@ -14,7 +14,7 @@ export async function getServerSideProps({ res }) {
     feed.item({
       title: post.title,
       url: `https://kenaqshal.com/blog/${post.slug}`,
-      date: post.date,
+      date: post.publishedAt,
       description: post.excerpt
     });
   });
