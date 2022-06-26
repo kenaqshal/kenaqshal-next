@@ -30,14 +30,14 @@ export default function Dashboard() {
             </Link>
           </p>
         </div>
-        <div className="flex flex-col w-full">
+        {/* <div className="flex flex-col w-full">
           <Unsplash />
           <YouTube />
-        </div>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
+        </div> */}
+        {/* <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           <Analytics />
           <GitHub />
-        </div>
+        </div> */}
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
           Top Tracks
         </h2>
