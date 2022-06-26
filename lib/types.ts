@@ -21,6 +21,15 @@ export type Snippet = {
   logo: string;
 };
 
+export type Project = {
+  _id: string;
+  slug: string;
+  content: MDXRemoteSerializeResult;
+  title: string;
+  description: string;
+  logo: string;
+};
+
 export enum Form {
   Initial,
   Loading,

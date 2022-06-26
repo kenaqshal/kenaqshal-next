@@ -8,7 +8,7 @@ import {
   Instagram,
   Linkedin,
   Twitter
-} from '@styled-icons/simple-icons';
+} from '@styled-icons/bootstrap';
 export default function About() {
   return (
     <Container title="About – Ken Aqshal Bramasta">

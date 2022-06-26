@@ -71,3 +71,43 @@ export const snippetBySlugQuery = `
   ${snippetFields}
 }
 `;
+
+
+const projectFields = `
+  _id,
+  title,
+  description,
+  logo,
+  "slug": slug.current,
+  link,
+`;
+
+export const allProjectQuery = `
+*[_type == "project"] | order(date desc, _updatedAt desc) {
+  ${projectFields}
+}`;
+
+
+
+export const allProjectsQuery = `
+*[_type == "project"] | order(date desc, _updatedAt desc) {
+  ${projectFields}
+}`;
+
+export const projectsQuery = `
+{
+  "project": *[_type == "project" && slug.current == $slug] | order(_updatedAt desc) [0] {
+    content,
+    ${projectFields}
+  }
+}`;
+
+export const projectSlugsQuery = `
+*[_type == "project" && defined(slug.current)][].slug.current
+`;
+
+export const projectBySlugQuery = `
+*[_type == "project" && slug.current == $slug][0] {
+  ${projectFields}
+}
+`;
