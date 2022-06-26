@@ -21,7 +21,15 @@ export default function Home({
             </h1>
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">
               Software Engineer at{' '}
-              <span className="font-semibold">Mbiz.co.id</span>
+              <span className="font-semibold">
+                <a
+                  href="http://mbiz.co.id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Mbiz
+                </a>
+              </span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-16">
               Friendly software engineer who love to learn new things and always
