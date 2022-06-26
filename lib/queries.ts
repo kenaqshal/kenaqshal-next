@@ -6,11 +6,20 @@ const postFields = `
   mainImage,
   "slug": slug.current,
 `;
+const calcPagination = (page: number, size: number): string => {
+    let lastData = page * size
+    let firstData = lastData - size
 
-export const indexQuery = `
-*[_type == "post"] | order(date desc, _updatedAt desc) {
-  ${postFields}
-}`;
+    return `[${firstData}...${lastData}]`
+}
+
+export const indexQuery = (page?:number, size?: number): string => {
+    let pagination = ''
+    if (page && size) pagination = calcPagination(page, size)
+    return `*[_type == "post"] | order(date desc, _updatedAt desc) ${pagination} {
+        ${postFields}
+    }`
+};
 
 export const postQuery = `
 {

@@ -9,7 +9,7 @@ export async function getServerSideProps({ res }) {
     feed_url: 'https://kenaqshal.com/feed.xml'
   });
 
-  const allPosts = await sanityClient.fetch(indexQuery);
+  const allPosts = await sanityClient.fetch(indexQuery());
   allPosts.map((post) => {
     feed.item({
       title: post.title,

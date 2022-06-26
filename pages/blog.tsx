@@ -74,7 +74,7 @@ export default function Blog({
 }
 
 export async function getStaticProps() {
-  const posts:Post[] = await getClient().fetch(indexQuery);  
-  
+  const posts:Post[] = await getClient().fetch(indexQuery());
+
   return { props: { posts } };
 }
