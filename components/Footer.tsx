@@ -28,30 +28,27 @@ export default function Footer() {
               About
             </a>
           </Link>
-          <Link href="/newsletter">
+          <Link href="/blog">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Newsletter
+              Blog
+            </a>
+          </Link>
+          <Link href="/project">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Project
             </a>
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://twitter.com/leeerob">
+          <ExternalLink href="https://twitter.com/kenaqshal">
             Twitter
           </ExternalLink>
           <ExternalLink href="https://github.com/kenaqshal">GitHub</ExternalLink>
-          <ExternalLink href="https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw">
-            YouTube
-          </ExternalLink>
+          <ExternalLink href="https://www.linkedin.com/in/kenaqshal">LinkedIn</ExternalLink>
+          <ExternalLink href="https://medium.com/@kenaqshal31">Medium</ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/uses">
-            <a className="text-gray-500 hover:text-gray-600 transition">Uses</a>
-          </Link>
-          <Link href="/guestbook">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Guestbook
-            </a>
-          </Link>
+          
           <Link href="/snippets">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Snippets
