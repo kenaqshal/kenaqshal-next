@@ -34,7 +34,7 @@ export default function SnippetLayout({
             />
           </div>
         </div>
-        <div className="prose dark:prose-dark w-full">{children}</div>
+        <div className="w-full mt-4 prose dark:prose-dark max-w-none">{children}</div>
       </article>
     </Container>
   );
