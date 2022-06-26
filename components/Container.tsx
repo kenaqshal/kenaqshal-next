@@ -17,9 +17,9 @@ function NavItem({ href, text }) {
       <a
         className={cn(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
+            ? 'font-semibold text-gray-800 dark:text-gray-200 underline'
             : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 hover:ease-in hover:underline dark:hover:bg-gray-800 transition-all'
         )}
       >
         <span className="capsize">{text}</span>
@@ -75,8 +75,7 @@ export default function Container(props) {
           <div className="ml-[-0.60rem]">
             <MobileMenu />
             <NavItem href="/" text="Home" />
-            <NavItem href="/guestbook" text="Guestbook" />
-            <NavItem href="/dashboard" text="Dashboard" />
+            <NavItem href="/about" text="About" />
             <NavItem href="/blog" text="Blog" />
             <NavItem href="/snippets" text="Snippets" />
           </div>
