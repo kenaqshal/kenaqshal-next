@@ -22,6 +22,7 @@ export const getTweets = async (ids) => {
       }
     }
   );
+  console.log(response);
 
   const tweets = await response.json();
 
