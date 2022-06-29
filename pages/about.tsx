@@ -3,12 +3,55 @@ import Image from 'next/image';
 
 import Container from 'components/Container';
 import {
+  Antdesign,
+  Express,
   Facebook,
+  Flutter,
   Github,
+  Go,
   Instagram,
+  Javascript,
+  Laravel,
   Linkedin,
-  Twitter
-} from '@styled-icons/bootstrap';
+  Medium,
+  Mysql,
+  Nestjs,
+  Nextdotjs,
+  Nodedotjs,
+  Postgresql,
+  Python,
+  ReactLogo,
+  Tailwindcss,
+  Twitter,
+  Typescript
+} from '@styled-icons/simple-icons';
+
+const skills = [
+  { icon: Javascript },
+  { icon: Typescript },
+  { icon: Nodedotjs },
+  { icon: Go },
+  { icon: ReactLogo },
+  { icon: Postgresql },
+  { icon: Mysql },
+  { icon: Nestjs },
+  { icon: Express },
+  { icon: Nextdotjs },
+  { icon: Tailwindcss },
+  { icon: Antdesign },
+  { icon: Python },
+  { icon: Laravel },
+  { icon: Flutter }
+];
+
+const socials = [
+  { icon: Github, link: 'https://github.com/kenaqshal' },
+  { icon: Instagram, link: 'https://www.instagram.com/kenaqshal' },
+  { icon: Linkedin, link: 'https://www.linkedin.com/in/kenaqshal' },
+  { icon: Facebook, link: 'https://www.facebook.com/kenaqshal.bramasta' },
+  { icon: Twitter, link: 'https://twitter.com/kenaqshal' },
+  { icon: Medium, link: 'https://medium.com/@kenaqshal31' }
+];
 export default function About() {
   return (
     <Container title="About – Ken Aqshal Bramasta">
@@ -37,30 +80,51 @@ export default function About() {
           </p>
 
           <p>
+            Before getting into software development, I wanted to be an
+            architect and create the tallest building architecture🏛, but when I
+            can't get the architecture major in vocational high school, so I
+            choose software engineering since I love to play with computers, and
+            then I realized what my real passion was and started learning more
+            about software engineer especially in how to make a system 👨‍💻
+          </p>
+
+          <p>
             In my spare time🆓, I love being outdoors, reading a comic or book,
             and watching the movie
           </p>
-          <p className="mb-2">
+
+          <p>
+            Learn more about me on my <Link href="/timeline">timeline</Link> and
+            please don't hesitate to <Link href="/contact">contact me</Link>!
+          </p>
+
+          <h4 className="text-2xl">Skills</h4>
+          <div className="flex flex-wrap w-full flex-row gap-y-3">
+            {skills.map((item, key) => {
+              return (
+                <div className="basis-10" key={key}>
+                  <item.icon className="w-8 h-auto text-gray-800 dark:text-gray-200" />
+                </div>
+              );
+            })}
+          </div>
+
+          <h4 className="text-2xl mb-0">Socials</h4>
+          <p className="mb-2 mt-0">
             You can also follow my work, projects and occassional insights into
             my life on my social networks:
           </p>
-          <span>
-            <Link href={'https://github.com/kenaqshal'} target='_blank'>
-              <Github className="w-6 h-auto text-gray-800 dark:text-gray-200" />
-            </Link>
-            <Link href={'https://www.instagram.com/kenaqshal'} target='_blank'>
-              <Instagram className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
-            </Link>
-            <Link href={'https://www.linkedin.com/in/kenaqshal'} target='_blank'>
-              <Linkedin className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
-            </Link>
-            <Link href={'https://www.facebook.com/kenaqshal.bramasta'} target='_blank'>
-              <Facebook className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
-            </Link>
-            <Link href={'https://twitter.com/kenaqshal'} target='_blank'>
-              <Twitter className="w-6 h-auto text-gray-800 dark:text-gray-200 ml-2" />
-            </Link>
-          </span>
+          <div className="flex flex-wrap w-full flex-row gap-y-3">
+            {socials.map((item, key) => {
+              return (
+                <div className="basis-10" key={key}>
+                  <Link href={item.link} target="_blank">
+                    <item.icon className="w-8 h-auto text-gray-800 dark:text-gray-200" />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </Container>
