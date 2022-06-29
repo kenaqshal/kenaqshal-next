@@ -39,7 +39,7 @@ export default function ProjectLayout({
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
           <a href="https://movic.id" target="_blank" rel="noopener noreferrer" className='no-underline'>
             <button
-              className="flex items-center justify-center right-1 top-1 px-4  font-medium h-8 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
+              className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-slate-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
               type="submit"
             >
               Visit{' '}
