@@ -94,7 +94,9 @@ export default function About() {
           </p>
 
           <p>
-            Learn more about me on my <Link href="/timeline">timeline</Link> and
+            Learn more about me on my <Link href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer">resume</Link>, <Link href="/timeline">timeline</Link> and
             please don't hesitate to <Link href="/contact">contact me</Link>!
           </p>
 

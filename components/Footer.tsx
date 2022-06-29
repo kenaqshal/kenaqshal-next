@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import NowPlaying from 'components/NowPlaying';
 
 const ExternalLink = ({ href, children }) => (
@@ -29,9 +28,7 @@ export default function Footer() {
             </a>
           </Link>
           <Link href="/blog">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Blog
-            </a>
+            <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
           </Link>
           <Link href="/project">
             <a className="text-gray-500 hover:text-gray-600 transition">
@@ -43,12 +40,27 @@ export default function Footer() {
           <ExternalLink href="https://twitter.com/kenaqshal">
             Twitter
           </ExternalLink>
-          <ExternalLink href="https://github.com/kenaqshal">GitHub</ExternalLink>
-          <ExternalLink href="https://www.linkedin.com/in/kenaqshal">LinkedIn</ExternalLink>
-          <ExternalLink href="https://medium.com/@kenaqshal31">Medium</ExternalLink>
+          <ExternalLink href="https://github.com/kenaqshal">
+            GitHub
+          </ExternalLink>
+          <ExternalLink href="https://www.linkedin.com/in/kenaqshal">
+            LinkedIn
+          </ExternalLink>
+          <ExternalLink href="https://medium.com/@kenaqshal31">
+            Medium
+          </ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
-          
+          <Link href="/public">
+            <a
+              className="text-gray-500 hover:text-gray-600 transition"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </Link>
           <Link href="/snippets">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Snippets
