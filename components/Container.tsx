@@ -46,7 +46,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="bg-red-50 dark:bg-gray-900">
+    <div className="bg-white-50 dark:bg-gray-900">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -118,7 +118,7 @@ export default function Container(props) {
       </div>
       <main
         id="skip"
-        className="flex flex-col justify-center px-8 bg-red dark:bg-gray-900"
+        className="flex flex-col justify-center px-8 bg-white-50 dark:bg-gray-900"
       >
         {children}
         <Footer />
