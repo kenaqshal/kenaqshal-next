@@ -94,10 +94,12 @@ export default function About() {
           </p>
 
           <p>
-            Learn more about me on my <Link href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer">resume</Link>, <Link href="/timeline">timeline</Link> and
-            please don't hesitate to <Link href="/contact">contact me</Link>!
+            Learn more about me on my{' '}
+            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              resume
+            </Link>
+            , <Link href="/timeline">timeline</Link> and please don't hesitate
+            to <Link href="/contact">contact me</Link>!
           </p>
 
           <h4 className="text-2xl">Skills</h4>
@@ -120,8 +122,10 @@ export default function About() {
             {socials.map((item, key) => {
               return (
                 <div className="basis-10" key={key}>
-                  <Link href={item.link} target="_blank">
-                    <item.icon className="w-8 h-auto text-gray-800 dark:text-gray-200" />
+                  <Link href={item.link}>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <item.icon className="w-8 h-auto text-gray-800 dark:text-gray-200" />
+                    </a>
                   </Link>
                 </div>
               );
