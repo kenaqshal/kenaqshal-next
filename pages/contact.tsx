@@ -36,16 +36,9 @@ export default function About() {
                 </Link>
               </li>
               <li>
-                <Link href="mailto:test@gmail.com">
+                <Link href="https://twitter.com/messages/compose?recipient_id=1477259275298738178">
                   <a target="_blank" rel="noopener noreferrer" className='text-red-500 dark:text-red-500'>
                     Twitter Direct Messages
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="mailto:test@gmail.com">
-                  <a target="_blank" rel="noopener noreferrer" className='text-indigo-500 dark:text-indigo-500'>
-                    Ask me Anything (on GitHub)
                   </a>
                 </Link>
               </li>
