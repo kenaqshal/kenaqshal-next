@@ -37,14 +37,14 @@ export default function About() {
               </li>
               <li>
                 <Link href="mailto:test@gmail.com">
-                  <a target="_blank" rel="noopener noreferrer" className='text-red-500'>
+                  <a target="_blank" rel="noopener noreferrer" className='text-red-500 dark:text-red-500'>
                     Twitter Direct Messages
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="mailto:test@gmail.com">
-                  <a target="_blank" rel="noopener noreferrer" className='text-indigo-500'>
+                  <a target="_blank" rel="noopener noreferrer" className='text-indigo-500 dark:text-indigo-500'>
                     Ask me Anything (on GitHub)
                   </a>
                 </Link>
