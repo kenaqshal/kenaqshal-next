@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import Container from 'components/Container';
 
-export default function About() {
+export default function Contact() {
   return (
     <Container title="Contact – Ken Aqshal Bramasta">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -11,7 +11,7 @@ export default function About() {
           Contact Me
         </h1>
         <div className="flex flex-wrap w-full flex-row gap-y-3 mb-8 prose dark:prose-dark leading-6 max-w-2xl">
-          <div className="basis-full md:basis-1/2">
+          <div className="basis-full md:basis-3/4">
             <p>
               I'm always open for a conversation, so please don't hesitate
               contacting me!
@@ -31,7 +31,7 @@ export default function About() {
               <li>
                 <Link href="mailto:test@gmail.com">
                   <a target="_blank" rel="noopener noreferrer">
-                    don't just say hello
+                    Via email
                   </a>
                 </Link>
               </li>
@@ -48,7 +48,7 @@ export default function About() {
               the end of the time.
             </p>
           </div>
-          <div className="basis-full md:basis-1/2">
+          <div className="basis-full md:basis-1/4">
             <Image
               alt={'title'}
               height={1200}
