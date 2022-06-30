@@ -101,6 +101,19 @@ export default function About() {
             , <Link href="/timeline">timeline</Link> and please don't hesitate
             to <Link href="/contact">contact me</Link>!
           </p>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className='no-underline'>
+            <button
+              className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-slate-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
+              type="submit"
+            >
+              Resume{' '}
+              {
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              }
+            </button>
+          </a>
 
           <h4 className="text-2xl">Skills</h4>
           <div className="flex flex-wrap w-full flex-row gap-y-3">
