@@ -71,6 +71,11 @@ export default function Footer() {
               Tweets
             </a>
           </Link>
+          <Link href="/timeline">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Timeline
+            </a>
+          </Link>
         </div>
       </div>
     </footer>
