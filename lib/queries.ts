@@ -123,6 +123,6 @@ const timelineFields = `
 `;
 
 export const allTimelineQuery = `
-*[_type == "timeline"] | order(date desc, _updatedAt desc) {
+*[_type == "timeline"] | order(_createdAt desc) {
   ${timelineFields}
 }`;
