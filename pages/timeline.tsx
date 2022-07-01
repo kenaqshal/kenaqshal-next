@@ -25,7 +25,7 @@ export default function Timelines({
           </p>
           {/* TODO: integrate timeline with sanitys */}
           <ol className="relative border-l border-gray-200 dark:border-gray-700 list-none ">
-            {timelines.map((timeline) => {
+            {timelines.map((timeline,index) => {
               const joinDate = format(
                 new Date(timeline?.startDate),
                 'MMMM yyyy'
@@ -34,7 +34,7 @@ export default function Timelines({
                 ? format(new Date(timeline.endDate), 'MMMM yyyy')
                 : 'Present';
               return (
-                <li className="mb-10 ml-6 mt-0">
+                <li className="mb-10 ml-6 mt-0" key={index}>
                   <span className="flex absolute -left-3 mt-2 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                     <svg
                       className="w-3 h-3 text-blue-600 dark:text-blue-400"
@@ -43,9 +43,9 @@ export default function Timelines({
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       ></path>
                     </svg>
                   </span>
