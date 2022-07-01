@@ -111,3 +111,18 @@ export const projectBySlugQuery = `
   ${projectFields}
 }
 `;
+
+
+const timelineFields = `
+  _id,
+  title,
+  content,
+  logo,
+  startDate,
+  endDate,
+`;
+
+export const allTimelineQuery = `
+*[_type == "timeline"] | order(date desc, _updatedAt desc) {
+  ${timelineFields}
+}`;

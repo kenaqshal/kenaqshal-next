@@ -30,6 +30,15 @@ export type Project = {
   logo: string;
 };
 
+export type Timeline = {
+  _id: string;
+  content: MDXRemoteSerializeResult;
+  title: string;
+  startDate: string;
+  endDate: string;
+  logo: string;
+};
+
 export enum Form {
   Initial,
   Loading,
