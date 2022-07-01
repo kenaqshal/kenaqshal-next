@@ -1,3 +1,4 @@
+import { app } from '../config/app';
 export const getTweets = async (ids) => {
   if (ids.length === 0) {
     return [];
@@ -18,7 +19,7 @@ export const getTweets = async (ids) => {
     `https://api.twitter.com/2/tweets?${queryParams}`,
     {
       headers: {
-        Authorization: `Bearer ${process.env.TWITTER_API_KEY}`
+        Authorization: `Bearer ${app.TWITTER_API_KEY}`
       }
     }
   );

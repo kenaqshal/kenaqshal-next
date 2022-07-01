@@ -1,10 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { app } from '../../config/app';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const accessToken = process.env.UNSPLASH_ACCESS_KEY;
+  const accessToken = app.UNSPLASH_ACCESS_KEY;
   const response = await fetch(
     `https://api.unsplash.com/users/kenaqshal/statistics?client_id=${accessToken}`,
     {

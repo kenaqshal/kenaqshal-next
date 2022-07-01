@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { postBySlugQuery } from 'lib/queries';
+import { app } from '../../config/app';
 import { previewClient } from 'lib/sanity-server';
 
 export default async function handler(
@@ -7,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (
-    req.query.secret !== process.env.SANITY_PREVIEW_SECRET ||
+    req.query.secret !== app.SANITY_PREVIEW_SECRET ||
     !req.query.slug
   ) {
     return res.status(401).json({ message: 'Invalid token' });
