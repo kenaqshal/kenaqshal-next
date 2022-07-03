@@ -1,5 +1,5 @@
 import { sanityClient } from 'lib/sanity-server';
-import { postSlugsQuery } from 'lib/queries';
+import { postSlugsQuery, projectSlugsQuery, snippetSlugsQuery } from 'lib/queries';
 import { app } from 'config/app';
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -17,8 +17,12 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
 `;
 export async function getServerSideProps({ res }) {
   const allPosts = await sanityClient.fetch(postSlugsQuery);
+  const allSnippets = await sanityClient.fetch(snippetSlugsQuery);
+  const allProjects = await sanityClient.fetch(projectSlugsQuery);
   const allPages = [
     ...allPosts.map((slug) => `blog/${slug}`),
+    ...allSnippets.map((slug) => `snippets/${slug}`),
+    ...allProjects.map((slug) => `project/${slug}`),
     ...[
       '',
       'about',
@@ -27,7 +31,10 @@ export async function getServerSideProps({ res }) {
       'guestbook',
       'newsletter',
       'tweets',
-      'uses'
+      'uses',
+      'timeline',
+      'snippets',
+      'project',
     ]
   ];
 
