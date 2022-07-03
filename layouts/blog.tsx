@@ -7,6 +7,7 @@ import Subscribe from 'components/Subscribe';
 import ViewCounter from 'components/ViewCounter';
 import { Post } from 'lib/types';
 import { urlForImage } from 'lib/sanity';
+import { app } from 'config/app';
 
 export default function BlogLayout({
   children,
@@ -53,7 +54,7 @@ export default function BlogLayout({
         <div className="text-sm text-gray-700 dark:text-gray-300">
           <a
             href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-              `https://kenaqshal.com/blog/${post.slug}`
+              `${app.BASE_URL}/blog/${post.slug}`
             )}`}
             target="_blank"
             rel="noopener noreferrer"

@@ -1,4 +1,4 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fkenaqshal%2Fkenaqshal.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fkenaqshal%2Fkenaqshal-next)
 
 # kenaqshal.com
 
@@ -44,8 +44,8 @@ $ yarn
 $ yarn dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/kenaqshal/kenaqshal.com/blob/main/.env.example).
+Create a `.env` file similar to [`.env.example`](https://github.com/kenaqshal/kenaqshal-next/blob/main/.env.example).
 
 ## Cloning / Forking
 
-Please review the [license](https://github.com/kenaqshal/kenaqshal.com/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).
+Please review the [license](https://github.com/kenaqshal/kenaqshal-next/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).

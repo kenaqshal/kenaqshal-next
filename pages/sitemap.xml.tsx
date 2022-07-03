@@ -1,5 +1,6 @@
 import { sanityClient } from 'lib/sanity-server';
 import { postSlugsQuery } from 'lib/queries';
+import { app } from 'config/app';
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -7,7 +8,7 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
           .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://kenaqshal.com/${slug}`}</loc>
+                    <loc>${`${app.BASE_URL}/${slug}`}</loc>
                 </url>
             `;
           })

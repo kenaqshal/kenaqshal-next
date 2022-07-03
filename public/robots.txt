@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://kenaqshal.com/sitemap.xml
+Sitemap: kenaqshal.com/sitemap.xml
