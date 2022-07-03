@@ -41,7 +41,7 @@ export default function Container(props) {
   const meta = {
     title: 'Ken Aqshal Bramasta – Developer, writer, creator.',
     description: `Front-end developer, JavaScript enthusiast, and course creator.`,
-    image: `${app.BASE_URL}/static/images/banner.png`,
+    image: `${app.BASE_URL}/avatar.jpg`,
     type: 'website',
     ...customMeta
   };
