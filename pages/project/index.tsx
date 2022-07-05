@@ -36,8 +36,8 @@ export default function Projects({
   );
 }
 
-export async function getStaticProps() {
-  const projects: Project[] = await getClient().fetch(allProjectQuery);
+export async function getStaticProps({preview = false}) {
+  const projects: Project[] = await getClient(preview).fetch(allProjectQuery);
 
   return { props: { projects } };
 }

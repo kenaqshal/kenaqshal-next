@@ -22,8 +22,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const { project } = await getClient().fetch(projectsQuery, {
+export async function getStaticProps({ params, preview = false }) {
+  const { project } = await getClient(preview).fetch(projectsQuery, {
     slug: params.slug
   });
   
