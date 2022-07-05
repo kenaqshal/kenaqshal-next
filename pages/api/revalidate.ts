@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { isValidRequest } from '@sanity/webhook';
 import { sanityClient } from 'lib/sanity-server';
 import { postUpdatedQuery } from 'lib/queries';
+import {app} "config/app"
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,7 +10,7 @@ export default async function handler(
 ) {
 
   // This isn't working yet - not sure why
-  if (!isValidRequest(req, process.env.SANITY_STUDIO_REVALIDATE_SECRET)) {
+  if (!isValidRequest(req, app.SANITY_STUDIO_REVALIDATE_SECRET)) {
     return res.status(401).json({ message: 'Invalid request' });
   }
 
