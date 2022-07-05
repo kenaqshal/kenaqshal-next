@@ -8,6 +8,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
 
+  // This isn't working yet - not sure why
+  if (!isValidRequest(req, process.env.SANITY_STUDIO_REVALIDATE_SECRET)) {
+    return res.status(401).json({ message: 'Invalid request' });
+  }
+
   const { _id: id } = req.body;
   if (typeof id !== 'string' || !id) {
     return res.status(400).json({ message: 'Invalid _id' });
