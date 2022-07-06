@@ -39,3 +39,7 @@ Create a `.env` file similar to [`.env.example`](https://github.com/kenaqshal/ke
 ## Cloning / Forking
 
 Please review the [license](https://github.com/kenaqshal/kenaqshal-next/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).
+
+
+## Credit
+_Project partially based on [Lee Rob's website](https://github.com/leerob/leerob.io/)_
