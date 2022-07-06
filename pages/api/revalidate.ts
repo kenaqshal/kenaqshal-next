@@ -2,30 +2,50 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { isValidRequest } from '@sanity/webhook';
 import { sanityClient } from 'lib/sanity-server';
 import { postUpdatedQuery } from 'lib/queries';
-import {app} from "config/app"
+import { app } from 'config/app';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-
+export default async function revalidate(req :NextApiRequest, res: NextApiResponse) {
+// {
   // This isn't working yet - not sure why
   if (!isValidRequest(req, app.SANITY_STUDIO_REVALIDATE_SECRET)) {
     return res.status(401).json({ message: 'Invalid request' });
   }
 
-  const { _id: id } = req.body;
+  const { _id: id, _type: type } = req.body;
   if (typeof id !== 'string' || !id) {
     return res.status(400).json({ message: 'Invalid _id' });
   }
 
   try {
-    const slug = await sanityClient.fetch(postUpdatedQuery, { id });
-    await Promise.all([
-      res.revalidate('/blog'),
-      res.revalidate(`/blog/${slug}`)
-    ]);
-    return res.status(200).json({ message: `Updated ${slug}` });
+    let slug;
+    if (type == 'post') {
+      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      await Promise.all([
+        res.revalidate('/'),
+        res.revalidate('/blog'),
+        res.revalidate(`/blog/${slug}`)
+      ]);
+    }
+    if (type == 'snippet') {
+      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      await Promise.all([
+        res.revalidate('/snippets'),
+        res.revalidate(`/snippets/${slug}`)
+      ]);
+    }
+    if (type == 'project') {
+      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      await Promise.all([
+        res.revalidate('/project'),
+        res.revalidate(`/project/${slug}`)
+      ]);
+    }
+    if (type == 'timeline') {
+      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      await Promise.all([res.revalidate('/timeline')]);
+    }
+
+    return res.status(200).json({ message: `Updated ${slug} on type ${type}` });
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }

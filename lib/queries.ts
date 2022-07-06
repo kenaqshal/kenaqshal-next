@@ -81,6 +81,8 @@ export const snippetBySlugQuery = `
 }
 `;
 
+export const snippetUpdatedQuery = `*[_type == "snippet" && _id == $id].slug.current`;
+
 
 const projectFields = `
   _id,
@@ -121,6 +123,8 @@ export const projectBySlugQuery = `
 }
 `;
 
+export const projectUpdatedQuery = `*[_type == "project" && _id == $id].slug.current`;
+
 
 const timelineFields = `
   _id,
@@ -135,3 +139,5 @@ export const allTimelineQuery = `
 *[_type == "timeline"] | order(_createdAt desc) {
   ${timelineFields}
 }`;
+
+export const timelineUpdatedQuery = `*[_type == "timeline" && _id == $id].slug.current`;
