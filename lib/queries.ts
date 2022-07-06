@@ -47,7 +47,16 @@ const snippetFields = `
   description,
   logo,
   "slug": slug.current,
+  _createdAt
 `;
+
+export const snippetIndexQuery = (page?:number, size?: number): string => {
+  let pagination = ''
+  if (page && size) pagination = calcPagination(page, size)
+  return `*[_type == "snippet"] | order(date desc, _updatedAt desc) ${pagination} {
+      ${snippetFields}
+  }`
+};
 
 export const allSnippetsQuery = `
 *[_type == "snippet"] | order(date desc, _updatedAt desc) {
