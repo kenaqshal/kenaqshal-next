@@ -61,8 +61,9 @@ export default function About() {
         </h1>
         <div className="mb-8 prose dark:prose-dark leading-6 max-w-2xl">
           <h6>
-            Hey I’m Bramasta, a software engineer who currently living in
-            Jakarta, Indonesia 🇮🇩
+            Hey, I'm Ken Aqshal Bramasta, you can call me Ken or Kenbram if
+            there's any other name who called Ken, and I'm a software engineer
+            who is currently living in Jakarta, Indonesia 🇮🇩
           </h6>
           <p>
             I'm currently working at{' '}
@@ -101,16 +102,32 @@ export default function About() {
             , <Link href="/timeline">timeline</Link> and please don't hesitate
             to <Link href="/contact">contact me</Link>!
           </p>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className='no-underline'>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
+          >
             <button
               className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-slate-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
               type="submit"
             >
               Resume{' '}
               {
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-auto w-5 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
               }
             </button>
           </a>

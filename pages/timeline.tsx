@@ -70,8 +70,8 @@ export default function Timelines({
   );
 }
 
-export async function getStaticProps() {
-  let timelines: Timeline[] = await getClient().fetch(allTimelineQuery);
+export async function getStaticProps({preview = false}) {
+  let timelines: Timeline[] = await getClient(preview).fetch(allTimelineQuery);
   timelines = await Promise.map(timelines, async (timeline) => {
     const { html } = await mdxToHtml(timeline.content);
     return {

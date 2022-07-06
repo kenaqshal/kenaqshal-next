@@ -47,7 +47,16 @@ const snippetFields = `
   description,
   logo,
   "slug": slug.current,
+  _createdAt
 `;
+
+export const snippetIndexQuery = (page?:number, size?: number): string => {
+  let pagination = ''
+  if (page && size) pagination = calcPagination(page, size)
+  return `*[_type == "snippet"] | order(date desc, _updatedAt desc) ${pagination} {
+      ${snippetFields}
+  }`
+};
 
 export const allSnippetsQuery = `
 *[_type == "snippet"] | order(date desc, _updatedAt desc) {
@@ -71,6 +80,8 @@ export const snippetBySlugQuery = `
   ${snippetFields}
 }
 `;
+
+export const snippetUpdatedQuery = `*[_type == "snippet" && _id == $id].slug.current`;
 
 
 const projectFields = `
@@ -112,6 +123,8 @@ export const projectBySlugQuery = `
 }
 `;
 
+export const projectUpdatedQuery = `*[_type == "project" && _id == $id].slug.current`;
+
 
 const timelineFields = `
   _id,
@@ -126,3 +139,5 @@ export const allTimelineQuery = `
 *[_type == "timeline"] | order(_createdAt desc) {
   ${timelineFields}
 }`;
+
+export const timelineUpdatedQuery = `*[_type == "timeline" && _id == $id].slug.current`;

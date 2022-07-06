@@ -22,8 +22,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const { snippet } = await getClient().fetch(snippetsQuery, {
+export async function getStaticProps({ params, preview = false }) {
+  const { snippet } = await getClient(preview).fetch(snippetsQuery, {
     slug: params.slug
   });
   if (!snippet) {

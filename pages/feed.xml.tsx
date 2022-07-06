@@ -1,6 +1,6 @@
 import RSS from 'rss';
 import { sanityClient } from 'lib/sanity-server';
-import { indexQuery } from 'lib/queries';
+import { indexQuery, snippetIndexQuery } from 'lib/queries';
 import { app } from 'config/app';
 
 export async function getServerSideProps({ res }) {
@@ -11,12 +11,21 @@ export async function getServerSideProps({ res }) {
   });
 
   const allPosts = await sanityClient.fetch(indexQuery());
+  const allSnippets = await sanityClient.fetch(snippetIndexQuery());
   allPosts.map((post) => {
     feed.item({
       title: post.title,
       url: `${app.BASE_URL}/blog/${post.slug}`,
       date: post.publishedAt,
       description: post.excerpt
+    });
+  });
+  allSnippets.map((snippet) => {
+    feed.item({
+      title: snippet.title,
+      url: `${app.BASE_URL}/snippets/${snippet.slug}`,
+      date: snippet._createdAt,
+      description: snippet.description
     });
   });
 
