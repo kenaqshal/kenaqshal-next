@@ -29,7 +29,7 @@ export default function Contact() {
             <p>There's a few ways you can get it touch:</p>
             <ul className="list-disc">
               <li>
-                <Link href="mailto:test@gmail.com">
+                <Link href="mailto:hi.kenaqshal@gmail.com">
                   <a target="_blank" rel="noopener noreferrer">
                     Via email
                   </a>
