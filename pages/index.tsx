@@ -39,8 +39,8 @@ export default function Home({
           <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
             <Image
               alt="Ken Aqshal Bramasta"
-              height={176}
-              width={176}
+              height={200}
+              width={200}
               src="/avatar.jpg"
               className="rounded-full filter grayscale"
             />
