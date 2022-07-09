@@ -12,7 +12,7 @@ export default function ProjectCard({
   return (
     <Link href={`/project/${slug}`}>
       <a
-        className="border border-grey-200 dark:border-gray-800 rounded p-4 w-full bg-white dark:bg-gray-900"
+        className="rounded border-2 border-primary p-4 w-full bg-white dark:bg-gray-900"
         {...rest}
       >
         

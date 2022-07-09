@@ -38,13 +38,13 @@ export default function ProjectLayout({
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
           <a href={project.link} target="_blank" rel="noopener noreferrer" className='no-underline'>
             <button
-              className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-slate-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
+              className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-primary text-gray-100 rounded w-28"
               type="submit"
             >
               Visit{' '}
               {
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
               }
             </button>

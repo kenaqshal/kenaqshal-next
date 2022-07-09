@@ -18,7 +18,8 @@ module.exports = {
           700: '#333333',
           800: '#222222',
           900: '#111111'
-        }
+        },
+        'primary' : '#3867d6',
       },
       fontFamily: {
         sans: ['IBM Plex Sans', ...fontFamily.sans]
