@@ -9,6 +9,7 @@ import cn from 'classnames';
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -78,13 +79,15 @@ export default function Container(props) {
             Skip to content
           </a>
           <div className="w-10 h-auto bg-gray-200 rounded-full dark:bg-gray-600 flex items-center justify-center  hover:ring-4 ring-primary  transition-all">
-            <Image
-              alt="Ken Aqshal Bramasta"
-              height={80}
-              width={80}
-              src="/avatar.jpg"
-              className="rounded-full w-full"
-            />
+            <Link href="/">
+              <Image
+                alt="Ken Aqshal Bramasta"
+                height={80}
+                width={80}
+                src="/avatar.jpg"
+                className="rounded-full w-full"
+              />
+            </Link>
           </div>
           <div className="ml-[-0.60rem]">
             <MobileMenu />
