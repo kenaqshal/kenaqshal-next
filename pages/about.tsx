@@ -103,13 +103,13 @@ export default function About() {
             to <Link href="/contact">contact me</Link>!
           </p>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/19-gytAKYky2pFi3Y04_1gVmzcw6WVKWx/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline"
           >
             <button
-              className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-slate-300 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
+              className="flex items-center justify-center right-1 top-1 px-4 font-medium h-8 bg-primary text-gray-100 rounded w-28"
               type="submit"
             >
               Resume{' '}
