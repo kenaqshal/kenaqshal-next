@@ -8,6 +8,8 @@ import cn from 'classnames';
 
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
+import Image from 'next/image';
+
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -18,9 +20,9 @@ function NavItem({ href, text }) {
       <a
         className={cn(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200 underline'
+            ? 'font-semibold text-gray-800 dark:text-gray-200 underline underline-offset-4 decoration-2 decoration-primary'
             : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 hover:ease-in hover:underline dark:hover:bg-gray-800 transition-all'
+          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg  hover:ease-in hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-primary transition-all'
         )}
       >
         <span className="capsize">{text}</span>
@@ -73,6 +75,18 @@ export default function Container(props) {
           <a href="#skip" className="skip-nav">
             Skip to content
           </a>
+          <a href="#skip" className="skip-nav">
+            Skip to content
+          </a>
+          <div className="w-10 h-auto bg-gray-200 rounded-full dark:bg-gray-600 flex items-center justify-center  hover:ring-4 ring-primary  transition-all">
+            <Image
+              alt="Ken Aqshal Bramasta"
+              height={80}
+              width={80}
+              src="/avatar.jpg"
+              className="rounded-full w-full"
+            />
+          </div>
           <div className="ml-[-0.60rem]">
             <MobileMenu />
             <NavItem href="/" text="Home" />
@@ -85,7 +99,7 @@ export default function Container(props) {
           <button
             aria-label="Toggle Dark Mode"
             type="button"
-            className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
+            className="w-10 h-10 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-4 ring-primary  transition-all"
             onClick={() =>
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
             }
