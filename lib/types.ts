@@ -28,6 +28,7 @@ export type Project = {
   title: string;
   description: string;
   logo: string;
+  link: string;
 };
 
 export type Timeline = {
