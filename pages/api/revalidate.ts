@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { isValidRequest } from '@sanity/webhook';
 import { sanityClient } from 'lib/sanity-server';
-import { postUpdatedQuery } from 'lib/queries';
+import { postUpdatedQuery, projectUpdatedQuery, snippetUpdatedQuery, timelineUpdatedQuery } from 'lib/queries';
 import { app } from 'config/app';
 
 export default async function revalidate(req :NextApiRequest, res: NextApiResponse) {
@@ -27,21 +27,21 @@ export default async function revalidate(req :NextApiRequest, res: NextApiRespon
       ]);
     }
     if (type == 'snippet') {
-      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      slug = await sanityClient.fetch(snippetUpdatedQuery, { id });
       await Promise.all([
         res.revalidate('/snippets'),
         res.revalidate(`/snippets/${slug}`)
       ]);
     }
     if (type == 'project') {
-      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      slug = await sanityClient.fetch(projectUpdatedQuery, { id });
       await Promise.all([
         res.revalidate('/project'),
         res.revalidate(`/project/${slug}`)
       ]);
     }
     if (type == 'timeline') {
-      slug = await sanityClient.fetch(postUpdatedQuery, { id });
+      slug = await sanityClient.fetch(timelineUpdatedQuery, { id });
       await Promise.all([res.revalidate('/timeline')]);
     }
 
