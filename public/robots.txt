@@ -1,2 +1,5 @@
 User-agent: *
-Sitemap: kenaqshal.com/sitemap.xml
+Allow: /*
+Disallow: /api/*
+Host: https://www.kenaqshal.com
+Sitemap: https://www.kenaqshal.com/sitemap.xml

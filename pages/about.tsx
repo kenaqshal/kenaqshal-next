@@ -59,6 +59,15 @@ export default function About() {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me
         </h1>
+        <div className="w-full relative flex justify-center">
+          <Image
+            alt="Ken Aqshal Bramasta"
+            height={300}
+            width={300}
+            src="/avatar.jpg"
+            className="rounded w-full mx-auto"
+          />
+        </div>
         <div className="mb-8 prose dark:prose-dark leading-6 max-w-2xl">
           <h6>
             Hey, I'm Ken Aqshal Bramasta, you can call me Ken or Kenbram if
@@ -67,9 +76,16 @@ export default function About() {
           </h6>
           <p>
             I'm currently working at{' '}
-            <Link href="https://www.mbiz.co.id/">Mbiz</Link>, maintaining and
-            developing the future of procurement stuff. Before that, I worked at
-            Bangun Kreatif Abadi, as a technical consultant.
+            <a
+              className="hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.mbiz.co.id/"
+            >
+              Mbiz
+            </a>
+            , maintaining and developing the future of procurement stuff. Before
+            that, I worked at Bangun Kreatif Abadi, as a technical consultant.
           </p>
           <p>
             I grew up in Bekasi, West Java. Just side of Jakarta(the most

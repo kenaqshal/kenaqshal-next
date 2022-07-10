@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '../components/Container';
@@ -13,11 +12,11 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container>
-      <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+      <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto py-16">
         <div className="flex flex-col-reverse sm:flex-row items-start">
           <div className="flex flex-col pr-8 mb-10">
             <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
-              Ken Aqshal Bramasta
+              Hi, my name is Ken.
             </h1>
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">
               Software Engineer at{' '}
@@ -32,10 +31,13 @@ export default function Home({
               </span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Friendly software engineer who love to learn new things and always
-              looking for new ways to improve his skills
+              I'm a software engineer who loves to learn new things and always
+              looking for new ways to improve his skills. Welcome to my website,
+              where you'll find all the stuff I'm currently thinking about.
             </p>
-            <button
+            <Link href="/about"
+            >
+              <button
               className="flex items-center justify-center right-1 top-1 px-1 font-medium bg-primary text-gray-100 rounded w-40 h-11"
               type="submit"
             >
@@ -57,18 +59,11 @@ export default function Home({
                 </svg>
               }
             </button>
-          </div>
-          <div className="w-52 sm:w-64 relative mb-8 sm:mb-0 mr-auto">
-            <Image
-              alt="Ken Aqshal Bramasta"
-              height={300}
-              width={300}
-              src="/avatar.jpg"
-              className="rounded-full w-full"
-            />
+            </Link>
+            
           </div>
         </div>
-        
+
         <div className="flex w-full flex-row flex-wrap justify-between mb-6 items-center">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight text-black dark:text-white h-4 align-middle">
             Recent Posts
