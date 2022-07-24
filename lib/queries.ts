@@ -16,14 +16,14 @@ const calcPagination = (page: number, size: number): string => {
 export const indexQuery = (page?:number, size?: number): string => {
     let pagination = ''
     if (page && size) pagination = calcPagination(page, size)
-    return `*[_type == "post"] | order(date desc, _updatedAt desc) ${pagination} {
+    return `*[_type == "post"] | order(date desc, _publishedAt desc) ${pagination} {
         ${postFields}
     }`
 };
 
 export const postQuery = `
 {
-  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "post": *[_type == "post" && slug.current == $slug] | order(_publishedAt desc) [0] {
     content,
     ${postFields}
   }
@@ -53,19 +53,19 @@ const snippetFields = `
 export const snippetIndexQuery = (page?:number, size?: number): string => {
   let pagination = ''
   if (page && size) pagination = calcPagination(page, size)
-  return `*[_type == "snippet"] | order(date desc, _updatedAt desc) ${pagination} {
+  return `*[_type == "snippet"] | order(date desc, _publishedAt desc) ${pagination} {
       ${snippetFields}
   }`
 };
 
 export const allSnippetsQuery = `
-*[_type == "snippet"] | order(date desc, _updatedAt desc) {
+*[_type == "snippet"] | order(date desc, _publishedAt desc) {
   ${snippetFields}
 }`;
 
 export const snippetsQuery = `
 {
-  "snippet": *[_type == "snippet" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "snippet": *[_type == "snippet" && slug.current == $slug] | order(_publishedAt desc) [0] {
     content,
     ${snippetFields}
   }
@@ -94,20 +94,20 @@ const projectFields = `
 `;
 
 export const allProjectQuery = `
-*[_type == "project"] | order(date desc, _updatedAt desc) {
+*[_type == "project"] | order(date desc, _publishedAt desc) {
   ${projectFields}
 }`;
 
 
 
 export const allProjectsQuery = `
-*[_type == "project"] | order(date desc, _updatedAt desc) {
+*[_type == "project"] | order(date desc, _publishedAt desc) {
   ${projectFields}
 }`;
 
 export const projectsQuery = `
 {
-  "project": *[_type == "project" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "project": *[_type == "project" && slug.current == $slug] | order(_publishedAt desc) [0] {
     content,
     ${projectFields}
   }

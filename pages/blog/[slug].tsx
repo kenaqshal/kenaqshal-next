@@ -47,6 +47,7 @@ export async function getStaticProps({ params, preview = false}) {
   }
 
   const { html, tweetIDs, readingTime } = await mdxToHtml(post.content);
+
   const tweets = await getTweets(tweetIDs);
 
   return {

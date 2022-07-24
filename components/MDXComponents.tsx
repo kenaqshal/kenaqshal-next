@@ -8,6 +8,7 @@ import Analytics from 'components/metrics/Analytics';
 import YouTube from 'components/metrics/Youtube';
 import Step from 'components/Step';
 import ImageWithTheme from 'components/ImageWithTheme';
+import { getBlurData } from 'lib/image-blur';
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -24,8 +25,8 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function RoundedImage (props) {
+  return <Image alt={props.alt} className="rounded-lg" {...props} layout='responsive' loading='lazy' />;
 }
 
 function Callout(props) {
@@ -39,6 +40,7 @@ function Callout(props) {
 
 const MDXComponents = {
   Image: RoundedImage,
+  // img: RoundedImage,
   ImageWithTheme,
   a: CustomLink,
   Callout,

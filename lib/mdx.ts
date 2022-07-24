@@ -5,12 +5,14 @@ import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
+import imageBlur from './image-blur';
 
 export async function mdxToHtml(source) {
   const mdxSource = await serialize(source, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
+        imageBlur,
         rehypeSlug,
         rehypeCodeTitles,
         rehypePrism,
@@ -21,7 +23,8 @@ export async function mdxToHtml(source) {
               className: ['anchor']
             }
           }
-        ]
+        ],
+
       ],
       format: 'mdx'
     }
