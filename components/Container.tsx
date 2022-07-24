@@ -96,7 +96,7 @@ export default function Container(props) {
             <NavItem href="/snippets" text="Snippets" />
             <NavItem href="/contact" text="Contact" />
           </div>
-          <div className="hidden sm:flex">
+          <div className="hidden md:flex">
             <button
               aria-label="Toggle Dark Mode"
               type="button"
