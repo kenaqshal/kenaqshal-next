@@ -72,7 +72,7 @@ export default function Container(props) {
         )}
       </Head>
       <div className="flex flex-col justify-center px-8 sticky top-0 z-50">
-        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto py-6  text-gray-900 bg-gray-0  dark:bg-gray-900 dark:text-gray-100">
+        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto py-4  text-gray-900 bg-gray-0  dark:bg-gray-900 dark:text-gray-100">
           <a href="#skip" className="skip-nav">
             Skip to content
           </a>
