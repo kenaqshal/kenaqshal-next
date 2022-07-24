@@ -45,6 +45,7 @@ export default function Container(props) {
     description: `Software engineer and JavaScript enthusiast`,
     image: `${app.BASE_URL}/avatar.jpg`,
     type: 'website',
+    url: `${app.BASE_URL}${router.asPath}`,
     ...customMeta
   };
 
@@ -54,8 +55,8 @@ export default function Container(props) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`${app.BASE_URL}${router.asPath}`} />
-        <link rel="canonical" href={`${app.BASE_URL}${router.asPath}`} />
+        <meta property="og:url" content={meta.url} />
+        <link rel="canonical" href={meta.url} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Ken Aqshal Bramasta" />
         <meta property="og:description" content={meta.description} />
