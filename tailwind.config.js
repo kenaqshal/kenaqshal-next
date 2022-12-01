@@ -22,7 +22,7 @@ module.exports = {
         'primary' : '#3867d6',
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', ...fontFamily.sans]
+        sans: ['Inter', ...fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {

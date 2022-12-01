@@ -13,6 +13,7 @@
     "format:check": "prettier --check **/*.tsx **/*.ts"
   },
   "dependencies": {
+    "@next/font": "^13.0.5",
     "@prisma/client": "^4.7.0",
     "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^2.0.0",

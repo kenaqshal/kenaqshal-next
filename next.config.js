@@ -11,6 +11,11 @@ module.exports = {
       'cdn.sanity.io'
     ]
   },
+  experimental: {
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } },
+    ],
+  },
   async headers() {
     return [
       {
@@ -18,20 +23,6 @@ module.exports = {
         headers: securityHeaders
       }
     ];
-  },
-  webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
-
-    // if (!dev && !isServer) {
-    //   Object.assign(config.resolve.alias, {
-    //     'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-    //     react: 'preact/compat',
-    //     'react-dom/test-utils': 'preact/test-utils',
-    //     'react-dom': 'preact/compat'
-    //   });
-    // }
-
-    return config;
   }
 };
 
