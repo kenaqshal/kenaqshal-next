@@ -37,29 +37,28 @@ export default function Home({
             </p>
             <Link href="/about" legacyBehavior>
               <button
-              className="flex items-center justify-center right-1 top-1 px-1 font-medium bg-primary text-gray-100 rounded w-40 h-11"
-              type="submit"
-            >
-              More about me
-              {
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-auto w-5 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              }
-            </button>
+                className="flex items-center justify-center right-1 top-1 px-1 font-medium bg-primary text-gray-100 rounded w-40 h-11"
+                type="submit"
+              >
+                More about me
+                {
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-auto w-5 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                }
+              </button>
             </Link>
-            
           </div>
         </div>
 
@@ -69,8 +68,10 @@ export default function Home({
           </h3>
           <Link
             href="/blog"
-            className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
-            Read more<svg
+            className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6"
+          >
+            Read more
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -84,7 +85,6 @@ export default function Home({
                 d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
               />
             </svg>
-
           </Link>
         </div>
 

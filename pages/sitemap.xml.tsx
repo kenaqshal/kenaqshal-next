@@ -1,5 +1,9 @@
 import { sanityClient } from 'lib/sanity-server';
-import { postSlugsQuery, projectSlugsQuery, snippetSlugsQuery } from 'lib/queries';
+import {
+  postSlugsQuery,
+  projectSlugsQuery,
+  snippetSlugsQuery
+} from 'lib/queries';
 import { app } from 'config/app';
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -34,7 +38,7 @@ export async function getServerSideProps({ res }) {
       'uses',
       'timeline',
       'snippets',
-      'project',
+      'project'
     ]
   ];
 

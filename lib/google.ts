@@ -1,5 +1,5 @@
 import { google } from 'googleapis';
-import {app} from '../config/app';
+import { app } from '../config/app';
 
 const googleAuth = new google.auth.GoogleAuth({
   credentials: {

@@ -32,111 +32,113 @@ export default function MobileMenu() {
     };
   }, []);
 
-  return <>
-    <button
-      className={cn(styles.burger, 'visible md:hidden')}
-      aria-label="Toggle menu"
-      type="button"
-      onClick={toggleMenu}
-    >
-      <MenuIcon data-hide={isMenuOpen} />
-      <CrossIcon data-hide={!isMenuOpen} />
-    </button>
-    {isMenuMounted && (
-      <ul
-        className={cn(
-          styles.menu,
-          'flex flex-col absolute bg-gray-0 dark:bg-gray-900',
-          isMenuRendered && styles.menuRendered
-        )}
+  return (
+    <>
+      <button
+        className={cn(styles.burger, 'visible md:hidden')}
+        aria-label="Toggle menu"
+        type="button"
+        onClick={toggleMenu}
       >
-        <li
-          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-          style={{ transitionDelay: '150ms' }}
+        <MenuIcon data-hide={isMenuOpen} />
+        <CrossIcon data-hide={!isMenuOpen} />
+      </button>
+      {isMenuMounted && (
+        <ul
+          className={cn(
+            styles.menu,
+            'flex flex-col absolute bg-gray-0 dark:bg-gray-900',
+            isMenuRendered && styles.menuRendered
+          )}
         >
-          <Link href="/" className="flex w-auto pb-4">
-            Home
-          </Link>
-        </li>
-        <li
-          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-          style={{ transitionDelay: '175ms' }}
-        >
-          <Link href="/about" className="flex w-auto pb-4">
-            About
-          </Link>
-        </li>
-        <li
-          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-          style={{ transitionDelay: '200ms' }}
-        >
-          <Link href="/project" className="flex w-auto pb-4">
-            Project
-          </Link>
-        </li>
-        <li
-          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-          style={{ transitionDelay: '250ms' }}
-        >
-          <Link href="/blog" className="flex w-auto pb-4">
-            Blog
-          </Link>
-        </li>
-        <li
-          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-          style={{ transitionDelay: '275ms' }}
-        >
-          <Link href="/snippets" className="flex w-auto pb-4">
-            Snippets
-          </Link>
-        </li>
-        <li
-          className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-          style={{ transitionDelay: '300ms' }}
-        >
-          <Link href="/contact" className="flex w-auto pb-4">
-            Contact
-          </Link>
-        </li>
-        <li className=" w-full" style={{ transitionDelay: '300ms' }}>
-          <button
-            className="flex items-center w-full justify-center right-1 top-1 px-1 text-xl bg-primary text-gray-100 rounded  h-11"
-            type="submit"
-            onClick={() =>
-              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-            }
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '150ms' }}
           >
-            Change theme
-            {
-              <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              className="w-7 h-7  text-gray-200 ml-2"
+            <Link href="/" className="flex w-auto pb-4">
+              Home
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '175ms' }}
+          >
+            <Link href="/about" className="flex w-auto pb-4">
+              About
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '200ms' }}
+          >
+            <Link href="/project" className="flex w-auto pb-4">
+              Project
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '250ms' }}
+          >
+            <Link href="/blog" className="flex w-auto pb-4">
+              Blog
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '275ms' }}
+          >
+            <Link href="/snippets" className="flex w-auto pb-4">
+              Snippets
+            </Link>
+          </li>
+          <li
+            className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+            style={{ transitionDelay: '300ms' }}
+          >
+            <Link href="/contact" className="flex w-auto pb-4">
+              Contact
+            </Link>
+          </li>
+          <li className=" w-full" style={{ transitionDelay: '300ms' }}>
+            <button
+              className="flex items-center w-full justify-center right-1 top-1 px-1 text-xl bg-primary text-gray-100 rounded  h-11"
+              type="submit"
+              onClick={() =>
+                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+              }
             >
-              {resolvedTheme !== 'dark' ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                />
-              )}
-            </svg>
-            }
-          </button>
-        </li>
-      </ul>
-    )}
-  </>;
+              Change theme
+              {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  className="w-7 h-7  text-gray-200 ml-2"
+                >
+                  {resolvedTheme !== 'dark' ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    />
+                  )}
+                </svg>
+              }
+            </button>
+          </li>
+        </ul>
+      )}
+    </>
+  );
 }
 
 function MenuIcon(props: JSX.IntrinsicElements['svg']) {

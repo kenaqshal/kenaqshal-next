@@ -25,7 +25,7 @@ export default function Timelines({
           </p>
           {/* TODO: integrate timeline with sanitys */}
           <ol className="relative border-l border-gray-200 dark:border-gray-700 list-none ">
-            {timelines.map((timeline,index) => {
+            {timelines.map((timeline, index) => {
               const joinDate = format(
                 new Date(timeline?.startDate),
                 'MMMM yyyy'
@@ -59,7 +59,6 @@ export default function Timelines({
                   <div className="mb-4 text-base font-normal text-gray-500 dark:text-gray-100">
                     <MDXRemote {...timeline.content} components={components} />
                   </div>
-                  
                 </li>
               );
             })}
@@ -70,7 +69,7 @@ export default function Timelines({
   );
 }
 
-export async function getStaticProps({preview = false}) {
+export async function getStaticProps({ preview = false }) {
   let timelines: Timeline[] = await getClient(preview).fetch(allTimelineQuery);
   timelines = await Promise.map(timelines, async (timeline) => {
     const { html } = await mdxToHtml(timeline.content);

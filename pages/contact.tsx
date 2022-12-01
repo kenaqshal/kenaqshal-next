@@ -19,10 +19,12 @@ export default function Contact() {
 
             <p>
               Anyways, please{' '}
-              <Link href="https://nohello.club/" target="_blank" rel="noopener noreferrer">
-                
-                  don't just say hello
-                
+              <Link
+                href="https://nohello.club/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                don't just say hello
               </Link>
               .
             </p>
@@ -32,10 +34,9 @@ export default function Contact() {
                 <Link
                   href="mailto:hi.kenaqshal@gmail.com"
                   target="_blank"
-                  rel="noopener noreferrer">
-                  
-                    Via email
-                  
+                  rel="noopener noreferrer"
+                >
+                  Via email
                 </Link>
               </li>
               <li>
@@ -43,10 +44,9 @@ export default function Contact() {
                   href="https://twitter.com/messages/compose?recipient_id=1477259275298738178"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className='text-red-500 dark:text-red-500'>
-                  
-                    Twitter Direct Messages
-                  
+                  className="text-red-500 dark:text-red-500"
+                >
+                  Twitter Direct Messages
                 </Link>
               </li>
             </ul>

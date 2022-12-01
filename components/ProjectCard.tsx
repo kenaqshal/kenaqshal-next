@@ -10,11 +10,11 @@ export default function ProjectCard({
   ...rest
 }) {
   return (
-    (<Link
+    <Link
       href={`/project/${slug}`}
       className="rounded border-2 border-primary p-4 w-full bg-white dark:bg-gray-900"
-      {...rest}>
-
+      {...rest}
+    >
       <div className="flex gap-4 flex-row w-full max-w-none items-center">
         <Image
           alt={title}
@@ -28,7 +28,6 @@ export default function ProjectCard({
         </h2>
       </div>
       <p className="mt-4 text-gray-700 dark:text-gray-400">{description}</p>
-
-    </Link>)
+    </Link>
   );
 }

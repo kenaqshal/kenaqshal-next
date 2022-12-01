@@ -168,10 +168,12 @@ export default function About() {
             {socials.map((item, key) => {
               return (
                 <div className="basis-10" key={key}>
-                  <Link href={item.link} target="_blank" rel="noopener noreferrer">
-
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <item.icon className="w-8 h-auto text-gray-800 dark:text-gray-200" />
-
                   </Link>
                 </div>
               );

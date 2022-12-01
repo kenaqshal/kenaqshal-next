@@ -25,10 +25,9 @@ export default function Dashboard() {
             more. Want to build your own? Check out my&nbsp;
             <Link
               href="/blog/fetching-data-with-swr"
-              className="text-gray-900 dark:text-gray-100 underline">
-              
-                blog series.
-              
+              className="text-gray-900 dark:text-gray-100 underline"
+            >
+              blog series.
             </Link>
           </p>
         </div>

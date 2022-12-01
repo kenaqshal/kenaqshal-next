@@ -105,7 +105,12 @@ export default function Footer() {
         <NowPlaying />
         <p className="text-sm w-full mt-3 md:mt-0 text-gray-500 sm:text-right dark:text-gray-400">
           © {format(new Date(), 'yyyy')}{' '}
-          <a href={app.BASE_URL} className="hover:underline" target={'_blank'} rel="noopener noreferrer">
+          <a
+            href={app.BASE_URL}
+            className="hover:underline"
+            target={'_blank'}
+            rel="noopener noreferrer"
+          >
             Ken Aqshal Bramasta
           </a>
         </p>
