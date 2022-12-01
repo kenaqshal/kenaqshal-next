@@ -11,10 +11,6 @@ module.exports = {
       'cdn.sanity.io'
     ]
   },
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true
-  },
   async headers() {
     return [
       {
