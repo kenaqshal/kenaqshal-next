@@ -25,23 +25,23 @@ export default function Footer() {
           </h2>
           <ul className="text-gray-600 dark:text-gray-400">
             <li className="mb-3">
-              <Link href="/">
-                <a className="hover:underline">Home</a>
+              <Link href="/" className="hover:underline">
+                Home
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/about">
-                <a className="hover:underline">About</a>
+              <Link href="/about" className="hover:underline">
+                About
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/blog">
-                <a className="hover:underline">Blog</a>
+              <Link href="/blog" className="hover:underline">
+                Blog
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/project">
-                <a className="hover:underline">Project</a>
+              <Link href="/project" className="hover:underline">
+                Project
               </Link>
             </li>
           </ul>
@@ -84,18 +84,18 @@ export default function Footer() {
               </ExternalLink>
             </li>
             <li className="mb-3">
-              <Link href="/snippets">
-                <a className="hover:underline">Snippet</a>
+              <Link href="/snippets" className="hover:underline">
+                Snippet
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/tweets">
-                <a className="hover:underline">Tweets</a>
+              <Link href="/tweets" className="hover:underline">
+                Tweets
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/timeline">
-                <a className="hover:underline">Timeline</a>
+              <Link href="/timeline" className="hover:underline">
+                Timeline
               </Link>
             </li>
           </ul>

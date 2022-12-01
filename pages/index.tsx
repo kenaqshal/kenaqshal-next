@@ -35,8 +35,7 @@ export default function Home({
               looking for new ways to improve his skills. Welcome to my website,
               where you'll find all the stuff I'm currently thinking about.
             </p>
-            <Link href="/about"
-            >
+            <Link href="/about" legacyBehavior>
               <button
               className="flex items-center justify-center right-1 top-1 px-1 font-medium bg-primary text-gray-100 rounded w-40 h-11"
               type="submit"
@@ -68,24 +67,24 @@ export default function Home({
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight text-black dark:text-white h-4 align-middle">
             Recent Posts
           </h3>
-          <Link href="/blog">
-            <a className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
-              Read more
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="h-6 w-6 ml-1 mt-1"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
-                />
-              </svg>
-            </a>
+          <Link
+            href="/blog"
+            className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
+            Read more<svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              className="h-6 w-6 ml-1 mt-1"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
+              />
+            </svg>
+
           </Link>
         </div>
 

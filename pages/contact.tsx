@@ -19,27 +19,34 @@ export default function Contact() {
 
             <p>
               Anyways, please{' '}
-              <Link href="https://nohello.club/">
-                <a target="_blank" rel="noopener noreferrer">
+              <Link href="https://nohello.club/" target="_blank" rel="noopener noreferrer">
+                
                   don't just say hello
-                </a>
+                
               </Link>
               .
             </p>
             <p>There's a few ways you can get it touch:</p>
             <ul className="list-disc">
               <li>
-                <Link href="mailto:hi.kenaqshal@gmail.com">
-                  <a target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="mailto:hi.kenaqshal@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  
                     Via email
-                  </a>
+                  
                 </Link>
               </li>
               <li>
-                <Link href="https://twitter.com/messages/compose?recipient_id=1477259275298738178">
-                  <a target="_blank" rel="noopener noreferrer" className='text-red-500 dark:text-red-500'>
+                <Link
+                  href="https://twitter.com/messages/compose?recipient_id=1477259275298738178"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className='text-red-500 dark:text-red-500'>
+                  
                     Twitter Direct Messages
-                  </a>
+                  
                 </Link>
               </li>
             </ul>

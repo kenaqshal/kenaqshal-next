@@ -16,18 +16,18 @@ function NavItem({ href, text }) {
   const isActive = router.asPath === href;
 
   return (
-    <NextLink href={href}>
-      <a
-        className={cn(
-          isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200 underline underline-offset-4 decoration-2 decoration-primary'
-            : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg  hover:ease-in hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-primary transition-all'
-        )}
-      >
-        <span className="capsize">{text}</span>
-      </a>
-    </NextLink>
+    (<NextLink
+      href={href}
+      className={cn(
+        isActive
+          ? 'font-semibold text-gray-800 dark:text-gray-200 underline underline-offset-4 decoration-2 decoration-primary'
+          : 'font-normal text-gray-600 dark:text-gray-400',
+        'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg  hover:ease-in hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-primary transition-all'
+      )}>
+
+      <span className="capsize">{text}</span>
+
+    </NextLink>)
   );
 }
 
@@ -77,7 +77,7 @@ export default function Container(props) {
             Skip to content
           </a>
           <div className="w-10 h-auto bg-gray-200 rounded-full dark:bg-gray-600 flex items-center justify-center  hover:ring-4 ring-primary  transition-all">
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <Image
                 alt="Ken Aqshal Bramasta"
                 height={80}
