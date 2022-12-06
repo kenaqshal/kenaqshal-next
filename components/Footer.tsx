@@ -2,17 +2,8 @@ import Link from 'next/link';
 import NowPlaying from 'components/NowPlaying';
 import { format } from 'date-fns';
 import { app } from 'config/app';
+import CustomLink from './CustomLink';
 
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="hover:underline"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
 
 export default function Footer() {
   return (
@@ -52,24 +43,24 @@ export default function Footer() {
           </h2>
           <ul className="text-gray-600 dark:text-gray-400">
             <li className="mb-3">
-              <ExternalLink href="https://twitter.com/kenaqshal">
+              <CustomLink href="https://twitter.com/kenaqshal">
                 Twitter
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <ExternalLink href="https://github.com/kenaqshal">
+              <CustomLink href="https://github.com/kenaqshal">
                 Github
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <ExternalLink href="https://www.linkedin.com/in/kenaqshal">
+              <CustomLink href="https://www.linkedin.com/in/kenaqshal">
                 LinkedIn
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <ExternalLink href="https://medium.com/@kenaqshal31">
+              <CustomLink href="https://medium.com/@kenaqshal31">
                 Medium
-              </ExternalLink>
+              </CustomLink>
             </li>
           </ul>
         </div>
@@ -79,9 +70,9 @@ export default function Footer() {
           </h2>
           <ul className="text-gray-600 dark:text-gray-400">
             <li className="mb-3">
-              <ExternalLink href="https://drive.google.com/file/d/19-gytAKYky2pFi3Y04_1gVmzcw6WVKWx/view?usp=sharing">
+              <CustomLink href="https://drive.google.com/file/d/19-gytAKYky2pFi3Y04_1gVmzcw6WVKWx/view?usp=sharing">
                 Resume
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
               <Link href="/snippets" className="hover:underline">
@@ -105,14 +96,10 @@ export default function Footer() {
         <NowPlaying />
         <p className="text-sm w-full mt-3 md:mt-0 text-gray-500 sm:text-right dark:text-gray-400">
           © {format(new Date(), 'yyyy')}{' '}
-          <a
-            href={app.BASE_URL}
-            className="hover:underline"
-            target={'_blank'}
-            rel="noopener noreferrer"
+          <CustomLink href={app.BASE_URL}
           >
             Ken Aqshal Bramasta
-          </a>
+          </CustomLink>
         </p>
       </div>
     </footer>
