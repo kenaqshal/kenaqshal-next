@@ -28,7 +28,11 @@ export default defineType({
     {
       type: 'image',
       options: {
-        hotspot: false // <-- Defaults to false
+        hotspot: false, // <-- Defaults to false
+        metadata: [
+          'blurhash',   
+          'lqip',       
+        ],
       },
       fields: [
         {
@@ -37,6 +41,14 @@ export default defineType({
           title: 'Caption',
           options: {
             isHighlighted: true // <-- make this field easily accessible
+          }
+        },
+        {
+          name:'metadata',
+          type: 'object',
+          title: 'Metadata',
+          options: {
+            isHighlighted: true 
           }
         }
       ]
