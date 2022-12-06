@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import components from 'components/MDXComponents';
 import { mdxToHtml } from 'lib/mdx';
 import Promise from 'bluebird';
+import SanityContent from 'components/sanity/Base';
 
 export default function Timelines({
   timelines
@@ -57,7 +58,7 @@ export default function Timelines({
                   </time>
 
                   <div className="mb-4 text-base font-normal text-gray-500 dark:text-gray-100">
-                    <MDXRemote {...timeline.content} components={components} />
+                    <SanityContent content={timeline.content}/>
                   </div>
                 </li>
               );
@@ -72,11 +73,8 @@ export default function Timelines({
 export async function getStaticProps({ preview = false }) {
   let timelines: Timeline[] = await getClient(preview).fetch(allTimelineQuery);
   timelines = await Promise.map(timelines, async (timeline) => {
-    const { html } = await mdxToHtml(timeline.content);
-    return {
-      ...timeline,
-      content: html
-    };
+    
+    return timeline
   });
 
   return { props: { timelines } };

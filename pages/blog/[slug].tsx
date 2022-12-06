@@ -7,6 +7,7 @@ import { getTweets } from 'lib/twitter';
 import { sanityClient, getClient } from 'lib/sanity/client';
 import { mdxToHtml } from 'lib/mdx';
 import { Post } from 'lib/types';
+import SanityContent from 'components/sanity/Base';
 
 export default function PostPage({ post }: { post: Post }) {
   const StaticTweet = ({ id }) => {
@@ -16,15 +17,7 @@ export default function PostPage({ post }: { post: Post }) {
 
   return (
     <BlogLayout post={post}>
-      <MDXRemote
-        {...post.content}
-        components={
-          {
-            ...components,
-            StaticTweet
-          } as any
-        }
-      />
+      <SanityContent content={post.content} />
     </BlogLayout>
   );
 }
@@ -46,16 +39,12 @@ export async function getStaticProps({ params, preview = false}) {
     return { notFound: true };
   }
 
-  const { html, tweetIDs, readingTime } = await mdxToHtml(post.content);
-  const tweets = await getTweets(tweetIDs);
 
   return {
     props: {
       post: {
         ...post,
-        content: html,
-        tweets,
-        readingTime
+        readingTime :1
       }
     }
   };

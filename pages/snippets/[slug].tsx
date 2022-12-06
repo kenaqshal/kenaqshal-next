@@ -5,11 +5,12 @@ import { snippetsQuery, snippetSlugsQuery } from 'lib/sanity/queries';
 import { sanityClient, getClient } from 'lib/sanity/client';
 import { mdxToHtml } from 'lib/mdx';
 import { Snippet } from 'lib/types';
+import SanityContent from 'components/sanity/Base';
 
 export default function SnippetsPage({ snippet }: { snippet: Snippet }) {
   return (
     <SnippetLayout snippet={snippet}>
-      <MDXRemote {...snippet.content} components={components} />
+      <SanityContent content={snippet.content} />
     </SnippetLayout>
   );
 }
@@ -30,13 +31,11 @@ export async function getStaticProps({ params, preview = false }) {
     return { notFound: true };
   }
 
-  const { html } = await mdxToHtml(snippet.content);
 
   return {
     props: {
       snippet: {
         ...snippet,
-        content: html
       }
     }
   };
