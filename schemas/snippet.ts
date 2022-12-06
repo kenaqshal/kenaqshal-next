@@ -59,8 +59,8 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
-    }),
+      of: [{ type: 'block' }]
+    })
     // defineField({
     //   type: 'markdown',
     //   title: 'Content',

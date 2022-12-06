@@ -23,8 +23,7 @@ export default defineType({
   type: 'array',
   of: [
     {
-      type: 'block',
-      
+      type: 'block'
     },
     {
       type: 'image',
