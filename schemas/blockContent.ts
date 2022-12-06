@@ -26,7 +26,7 @@ export default defineType({
       type: 'block'
     },
     {
-      type: 'image',
+      type: 'image', //TODO: Add image metadata
       options: {
         hotspot: false, // <-- Defaults to false
         metadata: [
@@ -41,14 +41,6 @@ export default defineType({
           title: 'Caption',
           options: {
             isHighlighted: true // <-- make this field easily accessible
-          }
-        },
-        {
-          name:'metadata',
-          type: 'object',
-          title: 'Metadata',
-          options: {
-            isHighlighted: true 
           }
         }
       ]

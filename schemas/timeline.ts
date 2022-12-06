@@ -36,16 +36,10 @@ export default defineType({
         hotspot: true
       }
     }),
-    // defineField({
-    //   type: 'markdown',
-    //   title: 'Content',
-    //   name: 'content'
-    // }),
     defineField({
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [{ type: 'block' }]
+      type: 'blockContent'
     }),
     defineField({
       name: 'startDate',

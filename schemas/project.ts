@@ -60,11 +60,6 @@ export default defineType({
       title: 'Content',
       type: 'blockContent'
     }),
-    // defineField({
-    //   type: 'markdown',
-    //   title: 'Content',
-    //   name: 'content'
-    // }),
     defineField({
       name: 'link',
       title: 'Project Link',
