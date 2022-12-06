@@ -3,7 +3,7 @@
  */
 module.exports = {
   swcMinify: true,
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
@@ -15,6 +15,10 @@ module.exports = {
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],
+    // you must add this to solve transpile issue 
+    // https://beta.nextjs.org/docs/api-reference/next.config.js#transpilepackages
+    transpilePackages: ['react-syntax-highlighter'],
+    
   },
   async headers() {
     return [
