@@ -6,7 +6,7 @@ import Container from 'components/Container';
 import Subscribe from 'components/Subscribe';
 import ViewCounter from 'components/ViewCounter';
 import { Post } from 'lib/types';
-import { urlForImage } from 'lib/sanity';
+import { urlForImage } from 'lib/sanity/image';
 import { app } from 'config/app';
 
 export default function BlogLayout({

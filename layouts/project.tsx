@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Container from 'components/Container';
 import type { PropsWithChildren } from 'react';
 import { Project } from 'lib/types';
-import { urlForImage } from 'lib/sanity';
+import { urlForImage } from 'lib/sanity/image';
 
 export default function ProjectLayout({
   children,

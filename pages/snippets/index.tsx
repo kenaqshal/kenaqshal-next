@@ -1,8 +1,8 @@
 import Container from 'components/Container';
 import FunctionCard from 'components/FunctionCard';
 import { InferGetStaticPropsType } from 'next';
-import { allSnippetsQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity-server';
+import { allSnippetsQuery } from 'lib/sanity/queries';
+import { getClient } from 'lib/sanity/client';
 import { Snippet } from 'lib/types';
 
 export default function Snippets({

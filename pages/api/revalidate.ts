@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { isValidRequest } from '@sanity/webhook';
-import { sanityClient } from 'lib/sanity-server';
-import { postUpdatedQuery, projectUpdatedQuery, snippetUpdatedQuery, timelineUpdatedQuery } from 'lib/queries';
+import { sanityClient } from 'lib/sanity/client';
+import { postUpdatedQuery, projectUpdatedQuery, snippetUpdatedQuery, timelineUpdatedQuery } from 'lib/sanity/queries';
 import { app } from 'config/app';
 
 export default async function revalidate(req :NextApiRequest, res: NextApiResponse) {

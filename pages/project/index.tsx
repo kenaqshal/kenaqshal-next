@@ -1,7 +1,7 @@
 import Container from 'components/Container';
 import { InferGetStaticPropsType } from 'next';
-import { allProjectQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity-server';
+import { allProjectQuery } from 'lib/sanity/queries';
+import { getClient } from 'lib/sanity/client';
 import { Project } from 'lib/types';
 import ProjectCard from 'components/ProjectCard';
 

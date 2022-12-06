@@ -1,9 +1,9 @@
-import { sanityClient } from 'lib/sanity-server';
+import { sanityClient } from 'lib/sanity/client';
 import {
   postSlugsQuery,
   projectSlugsQuery,
   snippetSlugsQuery
-} from 'lib/queries';
+} from 'lib/sanity/queries';
 import { app } from 'config/app';
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>

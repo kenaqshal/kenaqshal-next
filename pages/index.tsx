@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 import Container from '../components/Container';
 import BlogPostCard from '../components/BlogPostCard';
-import { getClient } from '../lib/sanity-server';
+import { getClient } from '../lib/sanity/client';
 import { Post } from '../lib/types';
-import { indexQuery } from '../lib/queries';
+import { indexQuery } from '../lib/sanity/queries';
 import { InferGetStaticPropsType } from 'next';
 
 export default function Home({

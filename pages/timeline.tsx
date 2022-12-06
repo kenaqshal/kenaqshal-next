@@ -1,7 +1,7 @@
 import Container from 'components/Container';
-import { getClient } from 'lib/sanity-server';
+import { getClient } from 'lib/sanity/client';
 import { Timeline } from 'lib/types';
-import { allTimelineQuery, indexQuery } from 'lib/queries';
+import { allTimelineQuery, indexQuery } from 'lib/sanity/queries';
 import { InferGetStaticPropsType } from 'next';
 import { format } from 'date-fns';
 import { MDXRemote } from 'next-mdx-remote';

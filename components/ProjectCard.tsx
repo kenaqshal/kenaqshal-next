@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { urlForImage } from 'lib/sanity';
+import { urlForImage } from 'lib/sanity/image';
 
 export default function ProjectCard({
   title,

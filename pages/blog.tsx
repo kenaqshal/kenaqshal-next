@@ -3,8 +3,8 @@ import { useState } from 'react';
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
 import { InferGetStaticPropsType } from 'next';
-import { indexQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity-server';
+import { indexQuery } from 'lib/sanity/queries';
+import { getClient } from 'lib/sanity/client';
 import { Post } from 'lib/types';
 
 export default function Blog({

@@ -1,8 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote';
 import SnippetLayout from 'layouts/snippets';
 import components from 'components/MDXComponents';
-import { snippetsQuery, snippetSlugsQuery } from 'lib/queries';
-import { sanityClient, getClient } from 'lib/sanity-server';
+import { snippetsQuery, snippetSlugsQuery } from 'lib/sanity/queries';
+import { sanityClient, getClient } from 'lib/sanity/client';
 import { mdxToHtml } from 'lib/mdx';
 import { Snippet } from 'lib/types';
 
