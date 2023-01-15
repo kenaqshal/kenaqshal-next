@@ -11,13 +11,15 @@ module.exports = {
       'cdn.sanity.io'
     ]
   },
+  // you must add this to solve transpile issue 
+  // https://beta.nextjs.org/docs/api-reference/next.config.js#transpilepackages
+  transpilePackages: ['react-syntax-highlighter', 'date-fns'],
   experimental: {
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],
-    // you must add this to solve transpile issue 
-    // https://beta.nextjs.org/docs/api-reference/next.config.js#transpilepackages
-    transpilePackages: ['react-syntax-highlighter'],
+    
+    
     
   },
   async headers() {
