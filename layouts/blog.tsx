@@ -40,12 +40,38 @@ export default function BlogLayout({
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
-            {post.readingTime}
+            {post.readingTime} min read
             {` • `}
             <ViewCounter slug={post.slug} />
           </p>
+          
         </div>
+        <div className="mt-4 flex gap-2">
+          {post.tags.map((tag) => {
+            return (
+              <span
+                key={tag.title}
+                className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-blue-600"
+              >
+                {tag.title}
+              </span>
+            );
+          })}
+        </div>
+
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
+        <div className="w-full p-2">
+          <Image
+            alt="Ken Aqshal Bramasta"
+            src={urlForImage(post.mainImage).url()}
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{objectFit: 'cover' }}
+            className="w-full max-h-80 rounded-xl"
+            
+          />
+        </div>
           {children}
         </div>
         <div className="mt-8"></div>

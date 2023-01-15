@@ -62,10 +62,8 @@ export default function Blog({
         )}
         {filteredBlogPosts.map((post) => (
           <BlogPost
-            key={post.title}
-            slug={post.slug}
-            title={post.title}
-            excerpt={post.excerpt}
+            blogData={post}
+            key={post._id}
           />
         ))}
       </div>

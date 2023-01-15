@@ -1,3 +1,4 @@
+// I want to show tags name, id, slug
 const postFields = `
   _id,
   title,
@@ -5,6 +6,8 @@ const postFields = `
   excerpt,
   mainImage,
   "slug": slug.current,
+  "tags": tags[]->{title, _id, 'slug': slug.current},
+  "readTime": round(length(pt::text(content)) / 5 / 180 )
 `;
 const calcPagination = (page: number, size: number): string => {
   let lastData = page * size;
@@ -16,14 +19,14 @@ const calcPagination = (page: number, size: number): string => {
 export const indexQuery = (page?: number, size?: number): string => {
   let pagination = '';
   if (page && size) pagination = calcPagination(page, size);
-  return `*[_type == "post"] | order(date desc, _updatedAt desc) ${pagination} {
+  return `*[_type == "post"] | order(date desc, publishedAt desc) ${pagination} {
         ${postFields}
     }`;
 };
 
 export const postQuery = `
 {
-  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "post": *[_type == "post" && slug.current == $slug] | order(publishedAt desc) [0] {
     content,
     ${postFields}
   }

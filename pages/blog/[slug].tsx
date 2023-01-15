@@ -40,11 +40,12 @@ export async function getStaticProps({ params, preview = false}) {
   }
 
 
+
   return {
     props: {
       post: {
         ...post,
-        readingTime :1
+        readingTime : post.readTime
       }
     }
   };

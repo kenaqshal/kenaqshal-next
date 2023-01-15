@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import Container from '../components/Container';
 import BlogPostCard from '../components/BlogPostCard';
+import BlogPost from 'components/BlogPost';
 import { getClient } from '../lib/sanity/client';
 import { Post } from '../lib/types';
 import { indexQuery } from '../lib/sanity/queries';
@@ -88,15 +89,13 @@ export default function Home({
           </Link>
         </div>
 
-        <div className="flex gap-6 flex-col md:flex-row">
+        <div className="flex w-full flex-row flex-wrap">
           {posts.map((post: Post) => {
             return (
-              <BlogPostCard
-                key={post.title}
-                title={post.title}
-                slug={post.slug}
-                gradient="from-primary to-primary"
-              />
+              <BlogPost
+              blogData={post}
+              key={post._id}
+          />
             );
           })}
         </div>
