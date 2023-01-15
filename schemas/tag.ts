@@ -2,8 +2,8 @@ import { UserIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'category',
-  title: 'Category',
+  name: 'tag',
+  title: 'Tag',
   // icon: UserIcon,
   type: 'document',
   fields: [
@@ -17,6 +17,16 @@ export default defineType({
       name: 'description',
       title: 'Descrtipion',
       type: 'text'
-    })
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        isUnique: (value, context) => context.defaultIsUnique(value, context)
+      }
+    }),
   ]
 });

@@ -8,7 +8,7 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import authorType from 'schemas/author'
 import postType from 'schemas/post'
-import categoryType from 'schemas/category'
+import tagType from 'schemas/tag'
 import projectType from 'schemas/project'
 import snippetType from 'schemas/snippet'
 import timelineType from 'schemas/timeline'
@@ -27,7 +27,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, postType, categoryType, projectType, snippetType, timelineType,blockContentType]
+    types: [authorType, postType, tagType, projectType, snippetType, timelineType,blockContentType]
     
   },
   plugins: [
