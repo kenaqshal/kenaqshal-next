@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
@@ -6,14 +6,35 @@ import { InferGetStaticPropsType } from 'next';
 import { indexQuery } from 'lib/sanity/queries';
 import { getClient } from 'lib/sanity/client';
 import { Post } from 'lib/types';
+import { useRouter } from 'next/router';
+
 
 export default function Blog({
   posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('');
-  const filteredBlogPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const { query } = useRouter();
+  const [tag, setTag] = useState('');
+  const filteredBlogPosts = useMemo(() => {
+    return posts
+      .filter((post) => {
+        const matchesName = post.title.toLowerCase().includes(searchValue.toLowerCase())
+        const matchesTag = post.tags.some((tagValue) => tagValue.slug.toLowerCase().includes(tag.toLowerCase()))
+        return matchesName && matchesTag
+      })
+  }, [posts, searchValue, tag]);
+
+  useEffect(() => {
+    if (query.search) {
+      setSearchValue(query.search.toString());
+    }
+    if (query.tag) {
+      setTag(query.tag.toString());
+    }
+  }, [query]);
+
+
+  
 
   return (
     <Container
@@ -33,6 +54,7 @@ export default function Blog({
           <input
             aria-label="Search articles"
             type="text"
+            defaultValue={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
             className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"

@@ -43,7 +43,7 @@ export default function BlogPost({ blogData }: { blogData: Post }) {
                 return (
                   <span
                     key={tag.title}
-                    className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
+                    className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600 dark:text-blue-50 dark:bg-blue-500"
                   >
                     {tag.title}
                   </span>

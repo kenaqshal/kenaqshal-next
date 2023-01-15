@@ -8,6 +8,7 @@ import ViewCounter from 'components/ViewCounter';
 import { Post } from 'lib/types';
 import { urlForImage } from 'lib/sanity/image';
 import { app } from 'config/app';
+import CustomLink from 'components/CustomLink';
 
 export default function BlogLayout({
   children,
@@ -44,34 +45,34 @@ export default function BlogLayout({
             {` • `}
             <ViewCounter slug={post.slug} />
           </p>
-          
         </div>
         <div className="mt-4 flex gap-2">
           {post.tags.map((tag) => {
             return (
-              <span
-                key={tag.title}
-                className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-sm font-semibold text-blue-600"
-              >
-                {tag.title}
-              </span>
+              <CustomLink href={`/blog?tag=${tag.slug}`} key={tag.title}>
+                <span
+                  key={tag.title}
+                  className="inline-flex items-center gap-1 rounded-full bg-blue-50 dark:bg-blue-500 px-2 py-1 text-sm font-semibold dark:text-blue-50 text-blue-600"
+                >
+                  {tag.title}
+                </span>
+              </CustomLink>
             );
           })}
         </div>
 
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
-        <div className="w-full p-2">
-          <Image
-            alt="Ken Aqshal Bramasta"
-            src={urlForImage(post.mainImage).url()}
-            width="0"
-            height="0"
-            sizes="100vw"
-            style={{objectFit: 'cover' }}
-            className="w-full max-h-80 rounded-xl"
-            
-          />
-        </div>
+          <div className="w-full">
+            <Image
+              alt="Ken Aqshal Bramasta"
+              src={urlForImage(post.mainImage).url()}
+              width="0"
+              height="0"
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
+              className="w-full max-h-80 rounded-xl"
+            />
+          </div>
           {children}
         </div>
         <div className="mt-8"></div>
