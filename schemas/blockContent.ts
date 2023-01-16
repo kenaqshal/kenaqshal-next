@@ -29,10 +29,7 @@ export default defineType({
       type: 'image', //TODO: Add image metadata
       options: {
         hotspot: false, // <-- Defaults to false
-        metadata: [
-          'blurhash',   
-          'lqip',       
-        ],
+        metadata: ['blurhash', 'lqip']
       },
       fields: [
         {

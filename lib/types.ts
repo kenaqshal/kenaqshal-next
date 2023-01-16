@@ -4,7 +4,7 @@ export type Tag = {
   _id: string;
   title: string;
   slug: string;
-}
+};
 
 export type Post = {
   _id: string;

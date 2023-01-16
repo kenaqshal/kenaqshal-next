@@ -4,7 +4,6 @@ import { format } from 'date-fns';
 import { app } from 'config/app';
 import CustomLink from './CustomLink';
 
-
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
@@ -96,10 +95,7 @@ export default function Footer() {
         <NowPlaying />
         <p className="text-sm w-full mt-3 md:mt-0 text-gray-500 sm:text-right dark:text-gray-400">
           © {format(new Date(), 'yyyy')}{' '}
-          <CustomLink href={app.BASE_URL}
-          >
-            Ken Aqshal Bramasta
-          </CustomLink>
+          <CustomLink href={app.BASE_URL}>Ken Aqshal Bramasta</CustomLink>
         </p>
       </div>
     </footer>

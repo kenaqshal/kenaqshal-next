@@ -22,7 +22,7 @@ export default function BlogPost({ blogData }: { blogData: Post }) {
             width="0"
             height="0"
             sizes="100vw"
-            style={{objectFit: 'cover' }}
+            style={{ objectFit: 'cover' }}
             className="w-full h-auto rounded-xl"
           />
         </div>

@@ -91,12 +91,7 @@ export default function Home({
 
         <div className="flex w-full flex-row flex-wrap">
           {posts.map((post: Post) => {
-            return (
-              <BlogPost
-              blogData={post}
-              key={post._id}
-          />
-            );
+            return <BlogPost blogData={post} key={post._id} />;
           })}
         </div>
       </div>

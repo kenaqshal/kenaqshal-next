@@ -58,7 +58,7 @@ export default function Timelines({
                   </time>
 
                   <div className="mb-4 text-base font-normal text-gray-500 dark:text-gray-100">
-                    <SanityContent content={timeline.content}/>
+                    <SanityContent content={timeline.content} />
                   </div>
                 </li>
               );
@@ -73,8 +73,7 @@ export default function Timelines({
 export async function getStaticProps({ preview = false }) {
   let timelines: Timeline[] = await getClient(preview).fetch(allTimelineQuery);
   timelines = await Promise.map(timelines, async (timeline) => {
-    
-    return timeline
+    return timeline;
   });
 
   return { props: { timelines } };

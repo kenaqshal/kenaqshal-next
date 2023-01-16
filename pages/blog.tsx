@@ -8,7 +8,6 @@ import { getClient } from 'lib/sanity/client';
 import { Post } from 'lib/types';
 import { useRouter } from 'next/router';
 
-
 export default function Blog({
   posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -16,12 +15,15 @@ export default function Blog({
   const { query } = useRouter();
   const [tag, setTag] = useState('');
   const filteredBlogPosts = useMemo(() => {
-    return posts
-      .filter((post) => {
-        const matchesName = post.title.toLowerCase().includes(searchValue.toLowerCase())
-        const matchesTag = post.tags.some((tagValue) => tagValue.slug.toLowerCase().includes(tag.toLowerCase()))
-        return matchesName && matchesTag
-      })
+    return posts.filter((post) => {
+      const matchesName = post.title
+        .toLowerCase()
+        .includes(searchValue.toLowerCase());
+      const matchesTag = post.tags.some((tagValue) =>
+        tagValue.slug.toLowerCase().includes(tag.toLowerCase())
+      );
+      return matchesName && matchesTag;
+    });
   }, [posts, searchValue, tag]);
 
   useEffect(() => {
@@ -32,9 +34,6 @@ export default function Blog({
       setTag(query.tag.toString());
     }
   }, [query]);
-
-
-  
 
   return (
     <Container
@@ -83,10 +82,7 @@ export default function Blog({
           </p>
         )}
         {filteredBlogPosts.map((post) => (
-          <BlogPost
-            blogData={post}
-            key={post._id}
-          />
+          <BlogPost blogData={post} key={post._id} />
         ))}
       </div>
     </Container>

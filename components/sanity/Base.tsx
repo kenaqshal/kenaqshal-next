@@ -3,7 +3,7 @@ import Link from 'next/link';
 import SanityAnchorHeader from './AnchorHeader';
 import SanityCode from './Code';
 import SanityImage from './Image';
-import SanityLink from './link';
+import SanityLink from './Link';
 import { PortableText } from '@portabletext/react';
 
 export default function SanityContent(props) {

@@ -27,6 +27,6 @@ export default defineType({
         maxLength: 96,
         isUnique: (value, context) => context.defaultIsUnique(value, context)
       }
-    }),
+    })
   ]
 });
