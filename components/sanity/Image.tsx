@@ -1,18 +1,16 @@
-
 import Image, { ImageLoader, ImageProps } from 'next/image';
 import { urlForImage } from 'lib/sanity/image';
-// import  from 'next/image';
 
-// const sanityImageLoader: ImageLoader = ({ src, width, quality = 75 }) => {
-//   return `${src}${
-//     src.includes('?') ? '&' : '?'
-//   }w=${width}&q=${quality}&auto=format`;
-// };
+const sanityImageLoader: ImageLoader = ({ src, width, quality = 75 }) => {
+  return `${src}${
+    src.includes('?') ? '&' : '?'
+  }w=${width}&q=${quality}&auto=format`;
+};
 
 //TODO: implement sanity image loader from metadata lqip
 import { getImageDimensions } from '@sanity/asset-utils';
-export default function SanityImage (props){
-  const { value , isInline, metadata } = props;
+export default function SanityImage(props) {
+  const { value, isInline, metadata } = props;
   const lqip = metadata?.lqip;
   const { width, height } = getImageDimensions(value);
   const imageWidth = isInline ? 100 : 800;
@@ -31,18 +29,21 @@ export default function SanityImage (props){
 
   return (
     <div className="w-100 h-auto flex justify-center">
-      <figure className="">
+      <figure className="w-full h-auto">
         <Image
           src={image}
           alt={value.caption || ' '}
           loading="lazy"
           width={width}
           height={height}
-          placeholder={lqip ? "blur" : "empty"}
-      blurDataURL={lqip}
+          placeholder={lqip ? 'blur' : 'empty'}
+          className="w-full h-auto max-h-96 rounded-xl"
+          blurDataURL={lqip}
+          loader={sanityImageLoader}
           style={{
             // Avoid jumping around with aspect-ratio CSS property
-            aspectRatio: width / height
+            aspectRatio: width / height,
+            objectFit: 'contain'
           }}
         />
         <figcaption className="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">
@@ -51,4 +52,4 @@ export default function SanityImage (props){
       </figure>
     </div>
   );
-};
+}
