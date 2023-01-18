@@ -69,8 +69,8 @@ export default function BlogLayout({
               width="0"
               height="0"
               sizes="100vw"
-              style={{ objectFit: 'cover' }}
-              className="w-full max-h-80 rounded-xl"
+              style={{ objectFit: 'contain', objectPosition: 'center' }}
+              className="w-full h-auto max-h-100 rounded-xl"
             />
           </div>
           {children}

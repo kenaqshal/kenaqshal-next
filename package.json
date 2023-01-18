@@ -21,6 +21,7 @@
     "@sanity/vision": "3.2.3",
     "@sanity/webhook": "^2.0.0",
     "@styled-icons/simple-icons": "^10.45.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "0.5.9",
     "@uiw/react-markdown-preview": "^4.1.7",
     "bluebird": "^3.7.2",

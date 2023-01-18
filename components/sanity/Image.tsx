@@ -28,8 +28,8 @@ export default function SanityImage(props) {
   // and then use next/image to lazy load the image
 
   return (
-    <div className="w-100 h-auto flex justify-center">
-      <figure className="w-full h-auto">
+    <div className="w-100 h-auto flex justify-center rounded-xl">
+      <figure className="w-full h-auto rounded-xl">
         <Image
           src={image}
           alt={value.caption || ' '}
