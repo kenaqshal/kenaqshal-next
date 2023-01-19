@@ -59,15 +59,6 @@ export default function About() {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me
         </h1>
-        <div className="w-full relative flex justify-center">
-          <Image
-            alt="Ken Aqshal Bramasta"
-            height={300}
-            width={300}
-            src="/avatar.jpg"
-            className="rounded w-full mx-auto"
-          />
-        </div>
         <div className="mb-8 prose dark:prose-dark leading-6 max-w-2xl">
           <h6>
             Hey, I'm Ken Aqshal Bramasta, you can call me Ken or Kenbram if
