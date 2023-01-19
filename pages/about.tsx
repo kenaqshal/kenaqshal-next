@@ -25,6 +25,12 @@ import {
   Twitter,
   Typescript
 } from '@styled-icons/simple-icons';
+import ExperienceTimeline from 'components/ExperienceTimeline';
+import Promise from 'bluebird';
+import { getClient } from 'lib/sanity/client';
+import { Timeline } from 'lib/types';
+import { allTimelineQuery } from 'lib/sanity/queries';
+import { InferGetStaticPropsType } from 'next';
 
 const skills = [
   { icon: Javascript },
@@ -52,7 +58,10 @@ const socials = [
   { icon: Twitter, link: 'https://twitter.com/kenaqshal' },
   { icon: Medium, link: 'https://medium.com/@kenaqshal31' }
 ];
-export default function About() {
+
+export default function About({
+  timelines
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container title="About – Ken Aqshal Bramasta">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -156,8 +165,24 @@ export default function About() {
               );
             })}
           </div>
+
+          <h4 className="text-2xl">Work Experiences</h4>
+          <p className="mb-2 mt-0">
+            Here's a brief rundown of my most recent work experiences.
+          </p>
+          <ExperienceTimeline timelines={timelines}/>
         </div>
       </div>
     </Container>
   );
+}
+
+
+export async function getStaticProps({ preview = false }) {
+  let timelines: Timeline[] = await getClient(preview).fetch(allTimelineQuery);
+  timelines = await Promise.map(timelines, async (timeline) => {
+    return timeline;
+  });
+
+  return { props: { timelines } };
 }
