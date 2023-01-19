@@ -13,22 +13,12 @@ export default function Contact() {
         <div className="flex flex-wrap w-full flex-row gap-y-3 mb-8 prose dark:prose-dark leading-6 max-w-2xl">
           <div className="basis-full md:basis-3/4">
             <p>
-              I'm always open for a conversation, so please don't hesitate
-              contacting me!
+            Looking to connect? Look no further! I'm always open for a conversation and I'd love to hear from you. 
             </p>
-
             <p>
-              Anyways, please{' '}
-              <Link
-                href="https://nohello.club/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                don't just say hello
-              </Link>
-              .
+            Whether you have a question, a project in mind or just want to say hi, I'm all ears.
             </p>
-            <p>There's a few ways you can get it touch:</p>
+            <p>You can reach me through a variety of channels:</p>
             <ul className="list-disc">
               <li>
                 <Link
@@ -51,8 +41,7 @@ export default function Contact() {
               </li>
             </ul>
             <p>
-              I always check every message and email that comes in every day at
-              the end of the time.
+              Let's connect and make something great together!
             </p>
           </div>
           <div className="basis-full md:basis-1/4">

@@ -61,48 +61,34 @@ export default function About() {
         </h1>
         <div className="mb-8 prose dark:prose-dark leading-6 max-w-2xl">
           <h6>
-            Hey, I'm Ken Aqshal Bramasta, you can call me Ken or Kenbram if
-            there's any other name who called Ken, and I'm a software engineer
-            who is currently living in Jakarta, Indonesia 🇮🇩
+            Hey there! I'm Ken Aqshal Bramasta, but you can call me Ken or
+            Bramasta. I'm a software engineer currently living in Jakarta,
+            Indonesia 🇮🇩.
           </h6>
           <p>
-            I'm currently working at{' '}
-            <a
-              className="hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.mbiz.co.id/"
-            >
-              Mbiz
-            </a>
-            , maintaining and developing the future of procurement stuff. Before
-            that, I worked at Bangun Kreatif Abadi, as a technical consultant.
-          </p>
-          <p>
-            I grew up in Bekasi, West Java. Just side of Jakarta(the most
-            crowded city in indonesia🚗), and I come from a software engineering
-            background in Vocational high school. I love working in the backend
-            because I don't have an interest in design and am more comfortable
-            creating a high-speed and reliable service rather than responsive
-            design. And I spent almost 90% of my career as a backend engineer✨.
+            I grew up in Bekasi, West Java, just a hop, skip and a jump away
+            from Jakarta, the most crowded city in Indonesia 🚗. I studied
+            software engineering in vocational high school and found my passion
+            for working on the backend. I don't have much interest in design,
+            but I love creating high-speed and reliable services. That's why
+            I've spent almost 90% of my career as a backend engineer✨.
           </p>
 
           <p>
-            Before getting into software development, I wanted to be an
-            architect and create the tallest building architecture🏛, but when I
-            can't get the architecture major in vocational high school, so I
-            choose software engineering since I love to play with computers, and
-            then I realized what my real passion was and started learning more
-            about software engineer especially in how to make a system 👨‍💻
+            Before I got into software development, my dream was to become an
+            architect and create the tallest buildings architecture🏛, but when I
+            couldn't get into the architecture major in vocational high school,
+            I decided to pursue software engineering because I loved playing
+            with computers. It wasn't until then that I realized my true passion
+            was in software engineering, specifically in creating systems 👨‍💻
           </p>
 
           <p>
-            In my spare time🆓, I love being outdoors, reading a comic or book,
-            and watching the movie
+          In my free time, I love being outdoors, reading comics and books, and watching movies.
           </p>
 
           <p>
-            Learn more about me on my{' '}
+          If you want to learn more about me, check out my{' '}
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               resume
             </Link>

@@ -45,9 +45,10 @@ export default function Blog({
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
-          {`This is the place where I write my personal blog, mostly about web development.
-            In total, I've written ${posts.length} articles on my blog.
-            Use the search below to filter by title.`}
+          {`Welcome to my blog! I'm excited to share my experience and skills in programming with you. 
+          You'll find a collection of helpful articles here, currently ${posts.length} of them. 
+          Feel free to browse and use the search option to find the topics that interest you the most. 
+          Thank you for visiting!`}
         </p>
         <div className="relative w-full mb-4">
           <input

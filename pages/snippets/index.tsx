@@ -20,8 +20,7 @@ export default function Snippets({
         <p className="mb-4 text-gray-600 dark:text-gray-400">
           These are a collection of past code snippets I've used and saved. This
           collection comes from some programming language about using any
-          function, and the others are anything from random CSS snippets to
-          Node.js scripts.
+          function. you might find something helpful here.
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           {snippets.map((snippet) => (

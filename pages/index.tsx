@@ -32,9 +32,10 @@ export default function Home({
               </span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              I'm a software engineer who loves to learn new things and always
-              looking for new ways to improve his skills. Welcome to my website,
-              where you'll find all the stuff I'm currently thinking about.
+              I'm glad you're here. I'm a software engineer who enjoys
+              experimenting with novel ideas and approaches. See what I'm
+              working on right now by looking around. Together, let's develop
+              and learn!
             </p>
             <Link href="/about" legacyBehavior>
               <button
