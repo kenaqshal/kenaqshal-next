@@ -1,6 +1,6 @@
 import RSS from 'rss';
-import { sanityClient } from 'lib/sanity-server';
-import { indexQuery, snippetIndexQuery } from 'lib/queries';
+import { sanityClient } from 'lib/sanity/client';
+import { indexQuery, snippetIndexQuery } from 'lib/sanity/queries';
 import { app } from 'config/app';
 
 export async function getServerSideProps({ res }) {

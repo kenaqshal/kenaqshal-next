@@ -7,3 +7,4 @@ node_modules
 .sanity
 yarn.lock
 .idea
+/dist

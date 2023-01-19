@@ -1,5 +1,11 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
+export type Tag = {
+  _id: string;
+  title: string;
+  slug: string;
+};
+
 export type Post = {
   _id: string;
   slug: string;
@@ -10,6 +16,8 @@ export type Post = {
   mainImage: string;
   readingTime: string;
   tweets: any[];
+  tags: Tag[];
+  readTime: number;
 };
 
 export type Snippet = {
@@ -24,7 +32,7 @@ export type Snippet = {
 export type Project = {
   _id: string;
   slug: string;
-  content: MDXRemoteSerializeResult;
+  content: any;
   title: string;
   description: string;
   logo: string;

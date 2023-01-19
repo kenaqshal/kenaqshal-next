@@ -1,7 +1,7 @@
 import Container from 'components/Container';
 import { InferGetStaticPropsType } from 'next';
-import { allProjectQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity-server';
+import { allProjectQuery } from 'lib/sanity/queries';
+import { getClient } from 'lib/sanity/client';
 import { Project } from 'lib/types';
 import ProjectCard from 'components/ProjectCard';
 
@@ -18,7 +18,7 @@ export default function Projects({
           Project
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
-        These are a collection of projects that I've work in the past. To showcase projects that I already work on with different frameworks, languages, and business cases.
+        Welcome to my project showcase! Explore my diverse range of experiences and skills that I've do on in the past as a software engineer here.
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           {projects.map((Project) => (

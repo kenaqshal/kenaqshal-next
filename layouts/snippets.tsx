@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Container from 'components/Container';
 import type { PropsWithChildren } from 'react';
 import { Snippet } from 'lib/types';
-import { urlForImage } from 'lib/sanity';
+import { urlForImage } from 'lib/sanity/image';
 
 export default function SnippetLayout({
   children,
@@ -34,7 +34,9 @@ export default function SnippetLayout({
             />
           </div>
         </div>
-        <div className="w-full mt-4 prose dark:prose-dark max-w-none">{children}</div>
+        <div className="w-full mt-4 prose dark:prose-dark max-w-none">
+          {children}
+        </div>
       </article>
     </Container>
   );

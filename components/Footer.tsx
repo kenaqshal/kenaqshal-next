@@ -2,17 +2,7 @@ import Link from 'next/link';
 import NowPlaying from 'components/NowPlaying';
 import { format } from 'date-fns';
 import { app } from 'config/app';
-
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="hover:underline"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
+import CustomLink from './CustomLink';
 
 export default function Footer() {
   return (
@@ -25,23 +15,23 @@ export default function Footer() {
           </h2>
           <ul className="text-gray-600 dark:text-gray-400">
             <li className="mb-3">
-              <Link href="/">
-                <a className="hover:underline">Home</a>
+              <Link href="/" className="hover:underline">
+                Home
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/about">
-                <a className="hover:underline">About</a>
+              <Link href="/about" className="hover:underline">
+                About
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/blog">
-                <a className="hover:underline">Blog</a>
+              <Link href="/blog" className="hover:underline">
+                Blog
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/project">
-                <a className="hover:underline">Project</a>
+              <Link href="/project" className="hover:underline">
+                Project
               </Link>
             </li>
           </ul>
@@ -52,24 +42,24 @@ export default function Footer() {
           </h2>
           <ul className="text-gray-600 dark:text-gray-400">
             <li className="mb-3">
-              <ExternalLink href="https://twitter.com/kenaqshal">
+              <CustomLink href="https://twitter.com/kenaqshal">
                 Twitter
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <ExternalLink href="https://github.com/kenaqshal">
+              <CustomLink href="https://github.com/kenaqshal">
                 Github
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <ExternalLink href="https://www.linkedin.com/in/kenaqshal">
+              <CustomLink href="https://www.linkedin.com/in/kenaqshal">
                 LinkedIn
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <ExternalLink href="https://medium.com/@kenaqshal31">
+              <CustomLink href="https://medium.com/@kenaqshal31">
                 Medium
-              </ExternalLink>
+              </CustomLink>
             </li>
           </ul>
         </div>
@@ -79,23 +69,23 @@ export default function Footer() {
           </h2>
           <ul className="text-gray-600 dark:text-gray-400">
             <li className="mb-3">
-              <ExternalLink href="https://drive.google.com/file/d/19-gytAKYky2pFi3Y04_1gVmzcw6WVKWx/view?usp=sharing">
+              <CustomLink href="https://drive.google.com/file/d/19-gytAKYky2pFi3Y04_1gVmzcw6WVKWx/view?usp=sharing">
                 Resume
-              </ExternalLink>
+              </CustomLink>
             </li>
             <li className="mb-3">
-              <Link href="/snippets">
-                <a className="hover:underline">Snippet</a>
+              <Link href="/snippets" className="hover:underline">
+                Snippet
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/tweets">
-                <a className="hover:underline">Tweets</a>
+              <Link href="/tweets" className="hover:underline">
+                Tweets
               </Link>
             </li>
             <li className="mb-3">
-              <Link href="/timeline">
-                <a className="hover:underline">Timeline</a>
+              <Link href="/timeline" className="hover:underline">
+                Timeline
               </Link>
             </li>
           </ul>
@@ -105,9 +95,7 @@ export default function Footer() {
         <NowPlaying />
         <p className="text-sm w-full mt-3 md:mt-0 text-gray-500 sm:text-right dark:text-gray-400">
           © {format(new Date(), 'yyyy')}{' '}
-          <a href={app.BASE_URL} className="hover:underline" target={'_blank'} rel="noopener noreferrer">
-            Ken Aqshal Bramasta
-          </a>
+          <CustomLink href={app.BASE_URL}>Ken Aqshal Bramasta</CustomLink>
         </p>
       </div>
     </footer>

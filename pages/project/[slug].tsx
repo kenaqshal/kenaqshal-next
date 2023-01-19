@@ -1,15 +1,13 @@
-import { MDXRemote } from 'next-mdx-remote';
 import ProjectLayout from 'layouts/project';
-import components from 'components/MDXComponents';
-import { projectsQuery, projectSlugsQuery } from 'lib/queries';
-import { sanityClient, getClient } from 'lib/sanity-server';
-import { mdxToHtml } from 'lib/mdx';
+import { projectsQuery, projectSlugsQuery } from 'lib/sanity/queries';
+import { sanityClient, getClient } from 'lib/sanity/client';
 import { Project } from 'lib/types';
+import SanityContent from 'components/sanity/Base';
 
 export default function ProjectsPage({ project }: { project: Project }) {
   return (
     <ProjectLayout project={project}>
-      <MDXRemote {...project.content} components={components} />
+      <SanityContent content={project.content} />
     </ProjectLayout>
   );
 }
@@ -26,18 +24,16 @@ export async function getStaticProps({ params, preview = false }) {
   const { project } = await getClient(preview).fetch(projectsQuery, {
     slug: params.slug
   });
-  
+
   if (!project) {
     return { notFound: true };
   }
-
-  const { html } = await mdxToHtml(project.content);
 
   return {
     props: {
       project: {
         ...project,
-        content: html
+        content: project.content
       }
     }
   };

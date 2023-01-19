@@ -1,3 +1,4 @@
+// I want to show tags name, id, slug
 const postFields = `
   _id,
   title,
@@ -5,25 +6,27 @@ const postFields = `
   excerpt,
   mainImage,
   "slug": slug.current,
+  "tags": tags[]->{title, _id, 'slug': slug.current},
+  "readTime": round(length(pt::text(content)) / 5 / 180 )
 `;
 const calcPagination = (page: number, size: number): string => {
-    let lastData = page * size
-    let firstData = lastData - size
+  let lastData = page * size;
+  let firstData = lastData - size;
 
-    return `[${firstData}...${lastData}]`
-}
+  return `[${firstData}...${lastData}]`;
+};
 
-export const indexQuery = (page?:number, size?: number): string => {
-    let pagination = ''
-    if (page && size) pagination = calcPagination(page, size)
-    return `*[_type == "post"] | order(date desc, _updatedAt desc) ${pagination} {
+export const indexQuery = (page?: number, size?: number): string => {
+  let pagination = '';
+  if (page && size) pagination = calcPagination(page, size);
+  return `*[_type == "post"] | order(date desc, publishedAt desc) ${pagination} {
         ${postFields}
-    }`
+    }`;
 };
 
 export const postQuery = `
 {
-  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "post": *[_type == "post" && slug.current == $slug] | order(publishedAt desc) [0] {
     content,
     ${postFields}
   }
@@ -50,12 +53,12 @@ const snippetFields = `
   _createdAt
 `;
 
-export const snippetIndexQuery = (page?:number, size?: number): string => {
-  let pagination = ''
-  if (page && size) pagination = calcPagination(page, size)
+export const snippetIndexQuery = (page?: number, size?: number): string => {
+  let pagination = '';
+  if (page && size) pagination = calcPagination(page, size);
   return `*[_type == "snippet"] | order(date desc, _updatedAt desc) ${pagination} {
       ${snippetFields}
-  }`
+  }`;
 };
 
 export const allSnippetsQuery = `
@@ -83,7 +86,6 @@ export const snippetBySlugQuery = `
 
 export const snippetUpdatedQuery = `*[_type == "snippet" && _id == $id].slug.current`;
 
-
 const projectFields = `
   _id,
   title,
@@ -97,8 +99,6 @@ export const allProjectQuery = `
 *[_type == "project"] | order(date desc, _updatedAt desc) {
   ${projectFields}
 }`;
-
-
 
 export const allProjectsQuery = `
 *[_type == "project"] | order(date desc, _updatedAt desc) {
@@ -124,7 +124,6 @@ export const projectBySlugQuery = `
 `;
 
 export const projectUpdatedQuery = `*[_type == "project" && _id == $id].slug.current`;
-
 
 const timelineFields = `
   _id,

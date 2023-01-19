@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { postBySlugQuery } from 'lib/queries';
+import { postBySlugQuery } from 'lib/sanity/queries';
 import { app } from '../../config/app';
-import { previewClient } from 'lib/sanity-server';
+import { previewClient } from 'lib/sanity/client';
 
 export default async function handler(
   req: NextApiRequest,

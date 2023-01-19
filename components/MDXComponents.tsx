@@ -15,8 +15,8 @@ const CustomLink = (props) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props}>{props.children}</a>
+      <Link href={href} {...props}>
+        {props.children}
       </Link>
     );
   }
@@ -24,7 +24,7 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-function RoundedImage(props) {
+export function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 

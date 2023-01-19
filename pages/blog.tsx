@@ -1,19 +1,39 @@
-import { useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
 import { InferGetStaticPropsType } from 'next';
-import { indexQuery } from 'lib/queries';
-import { getClient } from 'lib/sanity-server';
+import { indexQuery } from 'lib/sanity/queries';
+import { getClient } from 'lib/sanity/client';
 import { Post } from 'lib/types';
+import { useRouter } from 'next/router';
 
 export default function Blog({
   posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchValue, setSearchValue] = useState('');
-  const filteredBlogPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const { query } = useRouter();
+  const [tag, setTag] = useState('');
+  const filteredBlogPosts = useMemo(() => {
+    return posts.filter((post) => {
+      const matchesName = post.title
+        .toLowerCase()
+        .includes(searchValue.toLowerCase());
+      const matchesTag = post.tags.some((tagValue) =>
+        tagValue.slug.toLowerCase().includes(tag.toLowerCase())
+      );
+      return matchesName && matchesTag;
+    });
+  }, [posts, searchValue, tag]);
+
+  useEffect(() => {
+    if (query.search) {
+      setSearchValue(query.search.toString());
+    }
+    if (query.tag) {
+      setTag(query.tag.toString());
+    }
+  }, [query]);
 
   return (
     <Container
@@ -25,14 +45,16 @@ export default function Blog({
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
-          {`This is the place where I write my personal blog, mostly about web development.
-            In total, I've written ${posts.length} articles on my blog.
-            Use the search below to filter by title.`}
+          {`Welcome to my blog! I'm excited to share my experience and skills in programming with you. 
+          You'll find a collection of helpful articles here, currently ${posts.length} of them. 
+          Feel free to browse and use the search option to find the topics that interest you the most. 
+          Thank you for visiting!`}
         </p>
         <div className="relative w-full mb-4">
           <input
             aria-label="Search articles"
             type="text"
+            defaultValue={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
             className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
@@ -61,20 +83,15 @@ export default function Blog({
           </p>
         )}
         {filteredBlogPosts.map((post) => (
-          <BlogPost
-            key={post.title}
-            slug={post.slug}
-            title={post.title}
-            excerpt={post.excerpt}
-          />
+          <BlogPost blogData={post} key={post._id} />
         ))}
       </div>
     </Container>
   );
 }
 
-export async function getStaticProps({preview = false}) {
-  const posts:Post[] = await getClient(preview).fetch(indexQuery());
+export async function getStaticProps({ preview = false }) {
+  const posts: Post[] = await getClient(preview).fetch(indexQuery());
 
   return { props: { posts } };
 }

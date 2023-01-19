@@ -22,7 +22,7 @@ module.exports = {
         'primary' : '#3867d6',
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', ...fontFamily.sans]
+        sans: ['Inter', ...fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -95,5 +95,8 @@ module.exports = {
   variants: {
     typography: ['dark']
   },
-  plugins: [require('@tailwindcss/typography')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+  ]
 };
