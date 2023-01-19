@@ -42,7 +42,10 @@ export default async function revalidate(req :NextApiRequest, res: NextApiRespon
     }
     if (type == 'timeline') {
       slug = await sanityClient.fetch(timelineUpdatedQuery, { id });
-      await Promise.all([res.revalidate('/timeline')]);
+      await Promise.all([
+        res.revalidate('/timeline'),
+        res.revalidate('/about')
+      ]);
     }
 
     return res.status(200).json({ message: `Updated ${slug} on type ${type}` });
